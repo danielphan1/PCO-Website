@@ -18,6 +18,7 @@ class Settings(BaseSettings):
     smtp_port: int = 587
     smtp_user: str = ""
     smtp_password: str = ""
+    frontend_url: str = "http://localhost:3000"
 
     @field_validator("jwt_secret", mode="after")
     @classmethod
