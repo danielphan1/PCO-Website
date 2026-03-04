@@ -1,6 +1,21 @@
 import uuid
+from typing import Literal
 
-from pydantic import BaseModel
+from pydantic import BaseModel, EmailStr
+
+from app.models.user import ALL_ROLES
+
+# Build a Literal type from ALL_ROLES for validation
+_AllRolesLiteral = Literal[
+    "member",
+    "admin",
+    "president",
+    "vp",
+    "treasurer",
+    "secretary",
+    "sergeant_at_arms",
+    "historian",
+]
 
 
 class UserResponse(BaseModel):
@@ -11,3 +26,13 @@ class UserResponse(BaseModel):
     is_active: bool
 
     model_config = {"from_attributes": True}
+
+
+class MemberCreate(BaseModel):
+    email: EmailStr
+    full_name: str
+    role: _AllRolesLiteral = "member"
+
+
+class MemberRoleUpdate(BaseModel):
+    role: _AllRolesLiteral

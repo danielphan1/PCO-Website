@@ -36,7 +36,7 @@ def test_send_welcome_email_called(auth_client):
     with patch.object(BackgroundTasks, "add_task", capturing_add_task):
         resp = auth_client.post(
             "/v1/auth/login",
-            data={"username": "admin@test.com", "password": "admin-password"},
+            json={"email": "admin@test.com", "password": "admin-password"},
         )
         assert resp.status_code == 200
         token = resp.json()["access_token"]

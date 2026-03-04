@@ -13,7 +13,7 @@ def _admin_headers(auth_client) -> dict:
     """Log in as admin and return Authorization headers."""
     resp = auth_client.post(
         "/v1/auth/login",
-        data={"username": "admin@test.com", "password": "admin-password"},
+        json={"email": "admin@test.com", "password": "admin-password"},
     )
     assert resp.status_code == 200, f"Admin login failed: {resp.text}"
     token = resp.json()["access_token"]
@@ -24,7 +24,7 @@ def _member_headers(auth_client) -> dict:
     """Log in as active member and return Authorization headers."""
     resp = auth_client.post(
         "/v1/auth/login",
-        data={"username": "active@test.com", "password": "correct-password"},
+        json={"email": "active@test.com", "password": "correct-password"},
     )
     assert resp.status_code == 200, f"Member login failed: {resp.text}"
     token = resp.json()["access_token"]
