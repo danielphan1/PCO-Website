@@ -7,13 +7,13 @@
 
 ### Infrastructure
 
-- [ ] **INFRA-01**: Swap python-jose for PyJWT in pyproject.toml (python-jose has known CVEs including alg:none bypass)
-- [ ] **INFRA-02**: Add missing dependencies: alembic, supabase-py, aiosmtplib to pyproject.toml
+- [x] **INFRA-01**: Swap python-jose for PyJWT in pyproject.toml (python-jose has known CVEs including alg:none bypass)
+- [x] **INFRA-02**: Add missing dependencies: alembic, supabase-py, aiosmtplib to pyproject.toml
 - [ ] **INFRA-03**: All ORM models implemented: users, interest_submissions, events, rush_info, org_content, audit_log, refresh_tokens
 - [ ] **INFRA-04**: Initial Alembic migration creates all tables from ORM models
 - [ ] **INFRA-05**: Settings class hardened: jwt_secret is a required field with no default, all new env vars added (supabase_url, supabase_service_key, smtp_host, smtp_port, smtp_user, smtp_password, refresh_token_expire_days)
-- [ ] **INFRA-06**: Dockerfile uses uv.lock with --frozen flag for reproducible builds
-- [ ] **INFRA-07**: docker-compose.yml spins up API + local PostgreSQL with persistent volume
+- [x] **INFRA-06**: Dockerfile uses uv.lock with --frozen flag for reproducible builds
+- [x] **INFRA-07**: docker-compose.yml spins up API + local PostgreSQL with persistent volume
 
 ### Authentication & Authorization
 
@@ -64,7 +64,7 @@
 - [ ] **XCUT-02**: All endpoints are documented via FastAPI auto-generated OpenAPI/Swagger at /docs
 - [ ] **XCUT-03**: CORS configured for localhost:3000 and production domain — no wildcard origins
 - [ ] **XCUT-04**: SMTP email (aiosmtplib) sends welcome and confirmation emails via FastAPI BackgroundTasks (non-blocking)
-- [ ] **XCUT-05**: Ruff configured in pyproject.toml for formatting (ruff format) and linting (ruff check) — replaces Black
+- [x] **XCUT-05**: Ruff configured in pyproject.toml for formatting (ruff format) and linting (ruff check) — replaces Black
 - [ ] **XCUT-06**: README includes setup instructions, architecture overview, environment variable reference, and link to /docs
 
 ## v2 Requirements
@@ -103,13 +103,13 @@ Phase mapping confirmed during roadmap creation (2026-03-03).
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| INFRA-01 | Phase 1 | Pending |
-| INFRA-02 | Phase 1 | Pending |
+| INFRA-01 | Phase 1 | Complete |
+| INFRA-02 | Phase 1 | Complete |
 | INFRA-03 | Phase 1 | Pending |
 | INFRA-04 | Phase 1 | Pending |
 | INFRA-05 | Phase 1 | Pending |
-| INFRA-06 | Phase 1 | Pending |
-| INFRA-07 | Phase 1 | Pending |
+| INFRA-06 | Phase 1 | Complete |
+| INFRA-07 | Phase 1 | Complete |
 | AUTH-01 | Phase 2 | Pending |
 | AUTH-02 | Phase 2 | Pending |
 | AUTH-03 | Phase 2 | Pending |
@@ -139,7 +139,7 @@ Phase mapping confirmed during roadmap creation (2026-03-03).
 | XCUT-02 | Phase 1 | Pending |
 | XCUT-03 | Phase 1 | Pending |
 | XCUT-04 | Phase 3 | Pending |
-| XCUT-05 | Phase 1 | Pending |
+| XCUT-05 | Phase 1 | Complete |
 | XCUT-06 | Phase 4 | Pending |
 
 **Coverage:**
