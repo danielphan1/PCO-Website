@@ -13,7 +13,7 @@ Starting from an empty scaffold (folder structure and FastAPI initialization onl
 Decimal phases appear between their surrounding integers in numeric order.
 
 - [ ] **Phase 1: Foundation** - Database schema, config hardening, security utilities, and infra prerequisites
-- [x] **Phase 2: Authentication** - JWT login, token refresh, user profile, and RBAC enforcement (completed 2026-03-04)
+- [x] **Phase 2: Authentication** - JWT login, token refresh, user profile, and RBAC enforcement (completed 2026-03-04, verified 2026-03-04)
 - [ ] **Phase 3: Core Features** - Member management, interest form, rush info, org content, and SMTP email
 - [ ] **Phase 4: Storage and Finish** - Event PDF upload/listing/deletion via Supabase Storage and README
 
@@ -49,8 +49,8 @@ Plans:
 **Plans**: 2 plans
 
 Plans:
-- [ ] 02-01-PLAN.md — passlib removal, security.py utilities, auth schemas, login + refresh endpoints, test scaffold
-- [ ] 02-02-PLAN.md — get_current_user + require_admin deps, users/me endpoint, router wiring, full 16-test suite
+- [x] 02-01-PLAN.md — passlib removal, security.py utilities, auth schemas, login + refresh endpoints, test scaffold
+- [x] 02-02-PLAN.md — get_current_user + require_admin deps, users/me endpoint, router wiring, full 16-test suite
 
 ### Phase 3: Core Features
 **Goal**: Admins can manage members and content; the public can submit interest forms and view org info; rush details can be published and hidden

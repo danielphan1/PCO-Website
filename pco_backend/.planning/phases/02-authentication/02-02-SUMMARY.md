@@ -133,6 +133,25 @@ None - no external service configuration required.
 - Admin stub bodies (list_users, create_user, update_role) are ready for Phase 3 real implementation
 - Checkpoint: Task 3 requires human end-to-end verification via Swagger UI before Phase 2 is marked complete
 
+## Task 3: Live E2E Verification — PASSED (2026-03-04)
+
+All 6 checks passed against running Docker stack:
+
+| Check | Result |
+|-------|--------|
+| Login → 200 + tokens | PASS |
+| GET /users/me (admin token) → 200 + correct email | PASS |
+| Refresh token → 200 + new tokens | PASS |
+| Replay old refresh token → 401 | PASS |
+| Non-admin hits /admin/users/ → 403 | PASS |
+| Unauthenticated /users/me → 401 | PASS |
+
+### Bugs Found During Bring-Up (committed c577b29)
+
+1. **ORM mapper failure** — `User` had a forward `EventPDF` relationship; `app/db/base.py` (which registers all models) was never imported by the app. Fixed: import in `session.py`; remove `uploaded_events` from `User`.
+2. **Migration seed type mismatch** — `bindparams(id=str(uuid))` fails on UUID columns. Fixed: use `gen_random_uuid()` / `now()` in SQL.
+3. **Docker DB URL** — default `localhost:5432` unreachable inside container. Fixed: `DATABASE_URL=...@db:5432/...` in `.env`.
+
 ## Self-Check: PASSED
 
 - FOUND: app/core/deps.py
