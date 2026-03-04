@@ -10,7 +10,6 @@ from app.db.base_class import Base
 
 if TYPE_CHECKING:
     from app.models.audit_log import AuditLog
-    from app.models.event_pdf import EventPDF
     from app.models.refresh_token import RefreshToken
 
 OFFICER_ROLES = ["president", "vp", "treasurer", "secretary", "sergeant_at_arms", "historian"]
@@ -34,5 +33,4 @@ class User(Base):
     refresh_tokens: Mapped[list["RefreshToken"]] = relationship(
         "RefreshToken", back_populates="user"
     )
-    uploaded_events: Mapped[list["EventPDF"]] = relationship("EventPDF", back_populates="uploader")
     audit_logs: Mapped[list["AuditLog"]] = relationship("AuditLog", back_populates="actor")

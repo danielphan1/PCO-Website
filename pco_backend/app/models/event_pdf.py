@@ -26,4 +26,4 @@ class EventPDF(Base):
         UUID(as_uuid=True), ForeignKey("users.id"), nullable=True
     )
 
-    uploader: Mapped["User | None"] = relationship("User", back_populates="uploaded_events")
+    uploader: Mapped["User | None"] = relationship("User")

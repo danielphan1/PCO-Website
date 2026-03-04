@@ -7,9 +7,6 @@ Create Date: 2026-03-03
 
 from __future__ import annotations
 
-import uuid
-from datetime import datetime, timezone
-
 import sqlalchemy as sa
 
 from alembic import op
@@ -111,16 +108,14 @@ def upgrade() -> None:
     )
 
     # Seed data
-    now = datetime.now(timezone.utc).isoformat()
 
     # One unpublished rush_info row
-    rush_sql = (
-        "INSERT INTO rush_info "
-        "(id, dates, times, locations, description, is_published, updated_at) "
-        "VALUES (:id, '', '', '', '', false, :now)"
-    )
     op.execute(
-        sa.text(rush_sql).bindparams(id=str(uuid.uuid4()), now=now),
+        sa.text(
+            "INSERT INTO rush_info "
+            "(id, dates, times, locations, description, is_published, updated_at) "
+            "VALUES (gen_random_uuid(), '', '', '', '', false, now())"
+        )
     )
 
     # Three org_content rows (empty content)
@@ -128,8 +123,8 @@ def upgrade() -> None:
         op.execute(
             sa.text(
                 "INSERT INTO org_content (id, section, content, updated_at) "
-                "VALUES (:id, :section, '', :now)"
-            ).bindparams(id=str(uuid.uuid4()), section=section, now=now),
+                "VALUES (gen_random_uuid(), :section, '', now())"
+            ).bindparams(section=section)
         )
 
 
