@@ -6,18 +6,18 @@ import pytest
 def get_admin_token(auth_client):
     resp = auth_client.post(
         "/v1/auth/login",
-        data={"username": "admin@test.com", "password": "admin-password"},
+        json={"email": "admin@test.com", "password": "admin-password"},
     )
-    assert resp.status_code == 200
+    assert resp.status_code == 200, f"Admin login failed: {resp.text}"
     return resp.json()["access_token"]
 
 
 def get_member_token(auth_client):
     resp = auth_client.post(
         "/v1/auth/login",
-        data={"username": "active@test.com", "password": "correct-password"},
+        json={"email": "active@test.com", "password": "correct-password"},
     )
-    assert resp.status_code == 200
+    assert resp.status_code == 200, f"Member login failed: {resp.text}"
     return resp.json()["access_token"]
 
 
