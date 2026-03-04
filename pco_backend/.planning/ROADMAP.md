@@ -29,12 +29,12 @@ Decimal phases appear between their surrounding integers in numeric order.
   3. Starting the API without a `JWT_SECRET` environment variable (or with one shorter than 32 characters) causes the process to exit with a clear error before serving any requests
   4. `ruff check` and `ruff format --check` pass with zero violations on the codebase
   5. All endpoint errors return `{"detail": "...", "status_code": N}` consistent response format (global exception handlers registered)
-**Plans**: TBD
+**Plans**: 3 plans
 
 Plans:
-- [ ] 01-01: Dependencies, config hardening, Docker fix
-- [ ] 01-02: ORM models, Alembic migration, DB session
-- [ ] 01-03: Security utilities, global error handlers, CORS, OpenAPI config
+- [ ] 01-01-PLAN.md — Dep swap (PyJWT), Ruff/pytest config, Docker fixes, Wave 0 test scaffold
+- [ ] 01-02-PLAN.md — Settings hardening (Pydantic v2), 7 ORM models, Alembic migration, session/deps
+- [ ] 01-03-PLAN.md — Global exception handlers, OpenAPI config, security stub, Phase 1 checkpoint
 
 ### Phase 2: Authentication
 **Goal**: Users can log in with email/password and receive JWT tokens; all protected routes enforce authentication and role-based access
@@ -91,7 +91,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Foundation | 0/3 | Not started | - |
+| 1. Foundation | 0/3 | Planning done | - |
 | 2. Authentication | 0/2 | Not started | - |
 | 3. Core Features | 0/3 | Not started | - |
 | 4. Storage and Finish | 0/2 | Not started | - |
