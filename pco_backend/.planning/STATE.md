@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: executing
-stopped_at: Completed 03-core-features-01-PLAN.md
-last_updated: "2026-03-04T21:48:32.439Z"
+stopped_at: Completed 03-core-features-02-PLAN.md
+last_updated: "2026-03-04T21:54:11.637Z"
 last_activity: 2026-03-04 — Completed Plan 01-01
 progress:
   total_phases: 4
   completed_phases: 2
   total_plans: 8
-  completed_plans: 6
+  completed_plans: 7
   percent: 8
 ---
 
@@ -54,6 +54,7 @@ Progress: [█░░░░░░░░░] 8%
 | Phase 02-authentication P01 | 6min | 3 tasks | 7 files |
 | Phase 02-authentication P02 | 4min | 2 tasks | 6 files |
 | Phase 03-core-features P01 | 6min | 3 tasks | 8 files |
+| Phase 03-core-features P02 | 8min | 3 tasks | 10 files |
 
 ## Accumulated Context
 
@@ -78,6 +79,9 @@ Recent decisions affecting current work:
 - [Phase 03-core-features]: pydantic[email] / email-validator added to support EmailStr in MemberCreate schema
 - [Phase 03-core-features]: BackgroundTasks for non-blocking email — HTTP response returned before SMTP attempt; SMTP errors log-and-swallow
 - [Phase 03-core-features]: deactivate_member bulk UPDATE for refresh token revocation — atomic in same db.commit() as is_active=False
+- [Phase 03-core-features]: admin/settings.py MVP stub removed — imported STATE from old interest.py which no longer exists; replaced with empty placeholder router
+- [Phase 03-core-features]: toggle_visibility creates row if none exists — first toggle on empty table sets is_published=True (publish)
+- [Phase 03-core-features]: GET /v1/rush/ returns dict directly when unpublished — no separate schema needed for coming_soon response
 
 ### Pending Todos
 
@@ -90,6 +94,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-04T21:48:32.437Z
-Stopped at: Completed 03-core-features-01-PLAN.md
+Last session: 2026-03-04T21:54:11.635Z
+Stopped at: Completed 03-core-features-02-PLAN.md
 Resume file: None

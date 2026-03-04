@@ -35,8 +35,8 @@
 
 ### Interest Form
 
-- [ ] **INTR-01**: Anyone can submit interest form via POST /api/interest (name, email, phone, year, major) — duplicate email returns 409, sends confirmation email via SMTP on success
-- [ ] **INTR-02**: Admin can list all interest submissions via GET /api/interest
+- [x] **INTR-01**: Anyone can submit interest form via POST /api/interest (name, email, phone, year, major) — duplicate email returns 409, sends confirmation email via SMTP on success
+- [x] **INTR-02**: Admin can list all interest submissions via GET /api/interest
 
 ### Events / PDFs
 
@@ -46,9 +46,9 @@
 
 ### Rush Week
 
-- [ ] **RUSH-01**: Anyone can view rush info via GET /api/rush — returns full details if published, or {"status": "coming_soon"} if hidden
-- [ ] **RUSH-02**: Admin can update rush info via PUT /api/rush (dates, times, locations, descriptions)
-- [ ] **RUSH-03**: Admin can toggle rush visibility via PATCH /api/rush/visibility
+- [x] **RUSH-01**: Anyone can view rush info via GET /api/rush — returns full details if published, or {"status": "coming_soon"} if hidden
+- [x] **RUSH-02**: Admin can update rush info via PUT /api/rush (dates, times, locations, descriptions)
+- [x] **RUSH-03**: Admin can toggle rush visibility via PATCH /api/rush/visibility
 
 ### Org Content
 
@@ -122,14 +122,14 @@ Phase mapping confirmed during roadmap creation (2026-03-03).
 | MEMB-03 | Phase 3 | Complete |
 | MEMB-04 | Phase 3 | Complete |
 | MEMB-05 | Phase 3 | Complete |
-| INTR-01 | Phase 3 | Pending |
-| INTR-02 | Phase 3 | Pending |
+| INTR-01 | Phase 3 | Complete |
+| INTR-02 | Phase 3 | Complete |
 | EVNT-01 | Phase 4 | Pending |
 | EVNT-02 | Phase 4 | Pending |
 | EVNT-03 | Phase 4 | Pending |
-| RUSH-01 | Phase 3 | Pending |
-| RUSH-02 | Phase 3 | Pending |
-| RUSH-03 | Phase 3 | Pending |
+| RUSH-01 | Phase 3 | Complete |
+| RUSH-02 | Phase 3 | Complete |
+| RUSH-03 | Phase 3 | Complete |
 | CONT-01 | Phase 3 | Pending |
 | CONT-02 | Phase 3 | Pending |
 | CONT-03 | Phase 3 | Pending |
