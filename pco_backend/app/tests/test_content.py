@@ -1,7 +1,5 @@
 """Integration tests for org content endpoints (CONT-01 through CONT-05)."""
 
-import pytest
-
 
 def get_admin_token(auth_client):
     resp = auth_client.post(
@@ -22,7 +20,7 @@ def get_member_token(auth_client):
 
 
 def test_get_history_empty(auth_client):
-    """CONT-01: GET /v1/content/history returns {section: 'history', content: ''} when no row exists."""
+    """CONT-01: GET /v1/content/history returns {section: 'history', content: ''}."""
     resp = auth_client.get("/v1/content/history")
     assert resp.status_code == 200
     data = resp.json()
@@ -31,7 +29,7 @@ def test_get_history_empty(auth_client):
 
 
 def test_get_philanthropy_empty(auth_client):
-    """CONT-02: GET /v1/content/philanthropy returns {section: 'philanthropy', content: ''} when no row exists."""
+    """CONT-02: GET /v1/content/philanthropy returns {section: 'philanthropy', content: ''}."""
     resp = auth_client.get("/v1/content/philanthropy")
     assert resp.status_code == 200
     data = resp.json()
@@ -40,7 +38,7 @@ def test_get_philanthropy_empty(auth_client):
 
 
 def test_get_contacts_empty(auth_client):
-    """CONT-03: GET /v1/content/contacts returns {section: 'contacts', content: ''} when no row exists."""
+    """CONT-03: GET /v1/content/contacts returns {section: 'contacts', content: ''}."""
     resp = auth_client.get("/v1/content/contacts")
     assert resp.status_code == 200
     data = resp.json()
@@ -49,7 +47,7 @@ def test_get_contacts_empty(auth_client):
 
 
 def test_update_history(auth_client):
-    """CONT-04: Admin PUT /v1/content/history upserts plain text content; returns updated content."""
+    """CONT-04: Admin PUT /v1/content/history upserts plain text; returns updated content."""
     token = get_admin_token(auth_client)
     headers = {"Authorization": f"Bearer {token}"}
     resp = auth_client.put(
