@@ -1,7 +1,5 @@
 """Auth endpoint tests — AUTH-01 through AUTH-07."""
 
-import pytest
-
 # --- AUTH-07: password hashing ---
 
 
@@ -148,30 +146,80 @@ def test_refresh_deactivated_user(auth_client, db_session):
 
 
 def test_users_me_authenticated(auth_client):
-    pytest.fail("not implemented")
+    # Login to get a token
+    r = auth_client.post(
+        "/v1/auth/login", json={"email": "active@test.com", "password": "correct-password"}
+    )
+    assert r.status_code == 200
+    access_token = r.json()["access_token"]
+
+    r2 = auth_client.get("/v1/users/me", headers={"Authorization": f"Bearer {access_token}"})
+    assert r2.status_code == 200
+    data = r2.json()
+    assert data["email"] == "active@test.com"
+    assert "id" in data
+    assert "role" in data
+    assert "full_name" in data
 
 
 def test_users_me_unauthenticated(auth_client):
-    pytest.fail("not implemented")
+    r = auth_client.get("/v1/users/me")
+    assert r.status_code == 401
 
 
 # --- AUTH-04: get_current_user dependency ---
 
 
 def test_get_current_user_no_token(auth_client):
-    pytest.fail("not implemented")
+    r = auth_client.get("/v1/users/me")
+    assert r.status_code == 401
 
 
 def test_get_current_user_expired_token(auth_client):
-    pytest.fail("not implemented")
+    from datetime import datetime, timedelta, timezone
+
+    import jwt
+
+    from app.core.config import settings
+
+    # Craft an already-expired token
+    expired_payload = {
+        "sub": "00000000-0000-0000-0000-000000000000",
+        "role": "member",
+        "exp": datetime.now(timezone.utc) - timedelta(minutes=1),
+        "iat": datetime.now(timezone.utc) - timedelta(minutes=61),
+    }
+    expired_token = jwt.encode(expired_payload, settings.jwt_secret, algorithm=settings.jwt_alg)
+
+    r = auth_client.get("/v1/users/me", headers={"Authorization": f"Bearer {expired_token}"})
+    assert r.status_code == 401
 
 
 # --- AUTH-05: require_admin ---
 
 
 def test_require_admin_non_admin(auth_client):
-    pytest.fail("not implemented")
+    # Login as regular member
+    r = auth_client.post(
+        "/v1/auth/login", json={"email": "active@test.com", "password": "correct-password"}
+    )
+    assert r.status_code == 200
+    access_token = r.json()["access_token"]
+
+    # Hit the admin/users GET route (protected with require_admin)
+    r2 = auth_client.get("/v1/admin/users/", headers={"Authorization": f"Bearer {access_token}"})
+    assert r2.status_code == 403
 
 
 def test_require_admin_admin_user(auth_client):
-    pytest.fail("not implemented")
+    # Login as admin
+    r = auth_client.post(
+        "/v1/auth/login", json={"email": "admin@test.com", "password": "admin-password"}
+    )
+    assert r.status_code == 200
+    access_token = r.json()["access_token"]
+
+    # Admin user should reach the admin route handler (stub returns 200 [])
+    r2 = auth_client.get("/v1/admin/users/", headers={"Authorization": f"Bearer {access_token}"})
+    # 200 or any non-403/non-401 response means RBAC passed
+    assert r2.status_code not in (401, 403)

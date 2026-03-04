@@ -5,6 +5,7 @@ get_current_user — validates Bearer JWT, returns active User
 require_admin    — gates admin-only routes, returns User if role == "admin"
 """
 
+import uuid
 from typing import Annotated, Generator
 
 import jwt
@@ -56,10 +57,11 @@ def get_current_user(
     """
     try:
         payload = decode_access_token(token)
-        user_id: str | None = payload.get("sub")
-        if user_id is None:
+        user_id_str: str | None = payload.get("sub")
+        if user_id_str is None:
             raise _credentials_exception
-    except jwt.InvalidTokenError:
+        user_id = uuid.UUID(user_id_str)
+    except (jwt.InvalidTokenError, ValueError):
         raise _credentials_exception
 
     user = db.query(User).filter(User.id == user_id).first()
