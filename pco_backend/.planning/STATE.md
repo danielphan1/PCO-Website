@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: executing
-stopped_at: Phase 2 context gathered
-last_updated: "2026-03-04T09:56:19.992Z"
+stopped_at: Completed 02-authentication-02-01-PLAN.md
+last_updated: "2026-03-04T10:23:51.470Z"
 last_activity: 2026-03-04 — Completed Plan 01-01
 progress:
   total_phases: 4
   completed_phases: 1
-  total_plans: 3
-  completed_plans: 3
+  total_plans: 5
+  completed_plans: 4
   percent: 8
 ---
 
@@ -51,6 +51,7 @@ Progress: [█░░░░░░░░░] 8%
 
 *Updated after each plan completion*
 | Phase 01-foundation P01 | 3min | 2 tasks | 16 files |
+| Phase 02-authentication P01 | 6min | 3 tasks | 7 files |
 
 ## Accumulated Context
 
@@ -65,6 +66,10 @@ Recent decisions affecting current work:
 - [Pre-phase]: Supabase Storage bucket must be private; store relative paths in DB, not full URLs
 - [Phase 01-foundation]: Removed python-jose (no transitive conflict), replaced with PyJWT>=2.8 — No other package depended on python-jose; CVE risk eliminated at the library boundary
 - [Phase 01-foundation]: Ruff added as dev dep (not globally installed), all format/lint violations auto-fixed on activation — Activating ruff config for the first time requires fixing pre-existing violations to maintain ruff check . exits 0 invariant
+- [Phase 02-authentication]: bcrypt direct dependency replaces passlib — passlib 1.7.4 + bcrypt 5.0.0 broken upstream
+- [Phase 02-authentication]: _dummy_verify() runs bcrypt.checkpw on user-not-found path to prevent timing-based user enumeration
+- [Phase 02-authentication]: DB write order on refresh: insert new token first, revoke old second, single commit — client retains old token if DB fails
+- [Phase 02-authentication]: SHA-256 for refresh token storage hash (not bcrypt) — 256-bit entropy makes brute-force pre-image infeasible
 
 ### Pending Todos
 
@@ -77,6 +82,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-04T09:56:19.990Z
-Stopped at: Phase 2 context gathered
-Resume file: .planning/phases/02-authentication/02-CONTEXT.md
+Last session: 2026-03-04T10:23:51.468Z
+Stopped at: Completed 02-authentication-02-01-PLAN.md
+Resume file: None
