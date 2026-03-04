@@ -6,11 +6,19 @@ import pytest
 
 
 def test_hash_password():
-    pytest.fail("not implemented")
+    from app.core.security import hash_password
+
+    result = hash_password("hello")
+    assert result.startswith("$2b$"), f"Expected bcrypt hash, got: {result}"
+    assert len(result) > 20
 
 
 def test_verify_password():
-    pytest.fail("not implemented")
+    from app.core.security import hash_password, verify_password
+
+    h = hash_password("correct")
+    assert verify_password("correct", h) is True
+    assert verify_password("wrong", h) is False
 
 
 # --- AUTH-01: login ---
