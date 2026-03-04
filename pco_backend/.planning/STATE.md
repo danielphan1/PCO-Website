@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: executing
-stopped_at: Phase 3 context gathered
-last_updated: "2026-03-04T21:23:43.699Z"
+stopped_at: Completed 03-core-features-01-PLAN.md
+last_updated: "2026-03-04T21:48:32.439Z"
 last_activity: 2026-03-04 — Completed Plan 01-01
 progress:
   total_phases: 4
   completed_phases: 2
-  total_plans: 5
-  completed_plans: 5
+  total_plans: 8
+  completed_plans: 6
   percent: 8
 ---
 
@@ -53,6 +53,7 @@ Progress: [█░░░░░░░░░] 8%
 | Phase 01-foundation P01 | 3min | 2 tasks | 16 files |
 | Phase 02-authentication P01 | 6min | 3 tasks | 7 files |
 | Phase 02-authentication P02 | 4min | 2 tasks | 6 files |
+| Phase 03-core-features P01 | 6min | 3 tasks | 8 files |
 
 ## Accumulated Context
 
@@ -74,6 +75,9 @@ Recent decisions affecting current work:
 - [Phase 02-authentication]: oauth2_scheme tokenUrl set to /v1/auth/login — matches actual login route, enables Swagger Authorize button
 - [Phase 02-authentication]: UUID str-to-uuid.UUID conversion in get_current_user — SQLAlchemy UUID(as_uuid=True) requires uuid.UUID object, ValueError on invalid UUID mapped to 401
 - [Phase 02-authentication]: require_admin admin stub routes updated with GET / — needed for RBAC tests to exercise the gate; Phase 3 replaces stub bodies
+- [Phase 03-core-features]: pydantic[email] / email-validator added to support EmailStr in MemberCreate schema
+- [Phase 03-core-features]: BackgroundTasks for non-blocking email — HTTP response returned before SMTP attempt; SMTP errors log-and-swallow
+- [Phase 03-core-features]: deactivate_member bulk UPDATE for refresh token revocation — atomic in same db.commit() as is_active=False
 
 ### Pending Todos
 
@@ -86,6 +90,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-04T21:23:43.696Z
-Stopped at: Phase 3 context gathered
-Resume file: .planning/phases/03-core-features/03-CONTEXT.md
+Last session: 2026-03-04T21:48:32.437Z
+Stopped at: Completed 03-core-features-01-PLAN.md
+Resume file: None

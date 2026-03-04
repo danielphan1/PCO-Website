@@ -27,11 +27,11 @@
 
 ### Member Management
 
-- [ ] **MEMB-01**: Admin can list all members via GET /api/admin/members with active/deactivated filter
-- [ ] **MEMB-02**: Admin can create member account via POST /api/admin/members (name, email, role), system generates temp password, sends welcome email via SMTP
-- [ ] **MEMB-03**: Admin can update member role via PATCH /api/admin/members/{id}/role — writes entry to audit_log
-- [ ] **MEMB-04**: Admin can deactivate member via PATCH /api/admin/members/{id}/deactivate — soft-delete (is_active=false), invalidates all refresh tokens for that user
-- [ ] **MEMB-05**: Admin can reactivate member via PATCH /api/admin/members/{id}/reactivate — restores login access
+- [x] **MEMB-01**: Admin can list all members via GET /api/admin/members with active/deactivated filter
+- [x] **MEMB-02**: Admin can create member account via POST /api/admin/members (name, email, role), system generates temp password, sends welcome email via SMTP
+- [x] **MEMB-03**: Admin can update member role via PATCH /api/admin/members/{id}/role — writes entry to audit_log
+- [x] **MEMB-04**: Admin can deactivate member via PATCH /api/admin/members/{id}/deactivate — soft-delete (is_active=false), invalidates all refresh tokens for that user
+- [x] **MEMB-05**: Admin can reactivate member via PATCH /api/admin/members/{id}/reactivate — restores login access
 
 ### Interest Form
 
@@ -63,7 +63,7 @@
 - [ ] **XCUT-01**: All endpoints return consistent error response format: {"detail": "...", "status_code": N}
 - [ ] **XCUT-02**: All endpoints are documented via FastAPI auto-generated OpenAPI/Swagger at /docs
 - [ ] **XCUT-03**: CORS configured for localhost:3000 and production domain — no wildcard origins
-- [ ] **XCUT-04**: SMTP email (aiosmtplib) sends welcome and confirmation emails via FastAPI BackgroundTasks (non-blocking)
+- [x] **XCUT-04**: SMTP email (aiosmtplib) sends welcome and confirmation emails via FastAPI BackgroundTasks (non-blocking)
 - [x] **XCUT-05**: Ruff configured in pyproject.toml for formatting (ruff format) and linting (ruff check) — replaces Black
 - [ ] **XCUT-06**: README includes setup instructions, architecture overview, environment variable reference, and link to /docs
 
@@ -117,11 +117,11 @@ Phase mapping confirmed during roadmap creation (2026-03-03).
 | AUTH-05 | Phase 2 | Complete |
 | AUTH-06 | Phase 2 | Complete |
 | AUTH-07 | Phase 2 | Complete |
-| MEMB-01 | Phase 3 | Pending |
-| MEMB-02 | Phase 3 | Pending |
-| MEMB-03 | Phase 3 | Pending |
-| MEMB-04 | Phase 3 | Pending |
-| MEMB-05 | Phase 3 | Pending |
+| MEMB-01 | Phase 3 | Complete |
+| MEMB-02 | Phase 3 | Complete |
+| MEMB-03 | Phase 3 | Complete |
+| MEMB-04 | Phase 3 | Complete |
+| MEMB-05 | Phase 3 | Complete |
 | INTR-01 | Phase 3 | Pending |
 | INTR-02 | Phase 3 | Pending |
 | EVNT-01 | Phase 4 | Pending |
@@ -138,7 +138,7 @@ Phase mapping confirmed during roadmap creation (2026-03-03).
 | XCUT-01 | Phase 1 | Pending |
 | XCUT-02 | Phase 1 | Pending |
 | XCUT-03 | Phase 1 | Pending |
-| XCUT-04 | Phase 3 | Pending |
+| XCUT-04 | Phase 3 | Complete |
 | XCUT-05 | Phase 1 | Complete |
 | XCUT-06 | Phase 4 | Pending |
 

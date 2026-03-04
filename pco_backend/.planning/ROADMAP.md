@@ -93,5 +93,5 @@ Phases execute in numeric order: 1 → 2 → 3 → 4
 |-------|----------------|--------|-----------|
 | 1. Foundation | 1/3 | In Progress|  |
 | 2. Authentication | 2/2 | Complete   | 2026-03-04 |
-| 3. Core Features | 0/3 | Not started | - |
+| 3. Core Features | 1/3 | In Progress|  |
 | 4. Storage and Finish | 0/2 | Not started | - |
