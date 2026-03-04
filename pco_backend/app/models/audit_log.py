@@ -22,7 +22,7 @@ class AuditLog(Base):
     action: Mapped[str] = mapped_column(String, nullable=False)
     target_id: Mapped[uuid.UUID | None] = mapped_column(UUID(as_uuid=True), nullable=True)
     target_type: Mapped[str | None] = mapped_column(String, nullable=True)
-    metadata: Mapped[dict[str, Any] | None] = mapped_column(JSON, nullable=True)
+    extra_data: Mapped[dict[str, Any] | None] = mapped_column(JSON, nullable=True, name="metadata")
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), server_default=func.now())
 
     actor: Mapped["User"] = relationship("User", back_populates="audit_logs")
