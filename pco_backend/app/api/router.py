@@ -1,8 +1,9 @@
 from fastapi import APIRouter
-from app.api.v1 import public, interest, events, auth
-from app.api.v1.admin import users as admin_users
+
+from app.api.v1 import auth, events, interest, public
 from app.api.v1.admin import events as admin_events
 from app.api.v1.admin import settings as admin_settings
+from app.api.v1.admin import users as admin_users
 
 router = APIRouter()
 router.include_router(public.router, prefix="/v1/public", tags=["public"])

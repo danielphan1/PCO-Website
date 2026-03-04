@@ -1,5 +1,6 @@
 from pydantic_settings import BaseSettings
 
+
 class Settings(BaseSettings):
     env: str = "dev"
     app_name: str = "psi-chi-omega-api"
@@ -12,5 +13,6 @@ class Settings(BaseSettings):
     class Config:
         env_file = ".env"
         case_sensitive = False
+
 
 settings = Settings()
