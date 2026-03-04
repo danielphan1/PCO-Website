@@ -46,11 +46,11 @@ Plans:
   3. An authenticated member can GET `/v1/users/me` and receive their own profile; an unauthenticated request is rejected with 401
   4. Any request to an `/v1/admin/*` route without admin role is rejected with 403
   5. A deactivated user's login attempt and refresh token exchange are both rejected with 401
-**Plans**: TBD
+**Plans**: 2 plans
 
 Plans:
-- [ ] 02-01: Auth endpoints (login, refresh), security utilities integration
-- [ ] 02-02: Auth dependencies (get_current_user, require_admin), users/me endpoint, RBAC wiring
+- [ ] 02-01-PLAN.md — passlib removal, security.py utilities, auth schemas, login + refresh endpoints, test scaffold
+- [ ] 02-02-PLAN.md — get_current_user + require_admin deps, users/me endpoint, router wiring, full 16-test suite
 
 ### Phase 3: Core Features
 **Goal**: Admins can manage members and content; the public can submit interest forms and view org info; rush details can be published and hidden
