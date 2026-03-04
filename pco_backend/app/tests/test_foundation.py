@@ -88,8 +88,7 @@ def test_health_endpoint(client):
     assert resp.status_code == 200
 
 
-# XCUT-01: Error format (stub — Plan 01-03)
-@pytest.mark.skip(reason="Plan 01-03: Error handlers not yet registered")
+# XCUT-01: Error format
 def test_error_format(client):
     resp = client.get("/nonexistent-route-that-does-not-exist")
     assert resp.status_code == 404
@@ -105,8 +104,7 @@ def test_openapi_docs(client):
     assert resp.status_code == 200
 
 
-# XCUT-03: CORS headers (stub — Plan 01-03)
-@pytest.mark.skip(reason="Plan 01-03: CORS verify after error handler wiring")
+# XCUT-03: CORS headers
 def test_cors_headers(client):
     resp = client.get("/health", headers={"Origin": "http://localhost:3000"})
     assert "access-control-allow-origin" in resp.headers
