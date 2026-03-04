@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: executing
-stopped_at: Completed 03-core-features-02-PLAN.md
-last_updated: "2026-03-04T21:54:11.637Z"
+stopped_at: Completed 03-core-features-03-PLAN.md
+last_updated: "2026-03-04T21:59:18.048Z"
 last_activity: 2026-03-04 — Completed Plan 01-01
 progress:
   total_phases: 4
-  completed_phases: 2
+  completed_phases: 3
   total_plans: 8
-  completed_plans: 7
+  completed_plans: 8
   percent: 8
 ---
 
@@ -55,6 +55,7 @@ Progress: [█░░░░░░░░░] 8%
 | Phase 02-authentication P02 | 4min | 2 tasks | 6 files |
 | Phase 03-core-features P01 | 6min | 3 tasks | 8 files |
 | Phase 03-core-features P02 | 8min | 3 tasks | 10 files |
+| Phase 03-core-features P03 | 3min | 3 tasks | 4 files |
 
 ## Accumulated Context
 
@@ -82,6 +83,8 @@ Recent decisions affecting current work:
 - [Phase 03-core-features]: admin/settings.py MVP stub removed — imported STATE from old interest.py which no longer exists; replaced with empty placeholder router
 - [Phase 03-core-features]: toggle_visibility creates row if none exists — first toggle on empty table sets is_published=True (publish)
 - [Phase 03-core-features]: GET /v1/rush/ returns dict directly when unpublished — no separate schema needed for coming_soon response
+- [Phase 03-core-features]: GET /leadership defined before /{section} in FastAPI router — prevents path param capturing 'leadership' as section name
+- [Phase 03-core-features]: PUT /{section} uses Literal['history', 'philanthropy', 'contacts'] path type for automatic 422 on invalid section
 
 ### Pending Todos
 
@@ -94,6 +97,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-04T21:54:11.635Z
-Stopped at: Completed 03-core-features-02-PLAN.md
+Last session: 2026-03-04T21:59:18.046Z
+Stopped at: Completed 03-core-features-03-PLAN.md
 Resume file: None

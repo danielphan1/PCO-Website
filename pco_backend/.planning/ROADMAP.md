@@ -14,7 +14,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 
 - [ ] **Phase 1: Foundation** - Database schema, config hardening, security utilities, and infra prerequisites
 - [x] **Phase 2: Authentication** - JWT login, token refresh, user profile, and RBAC enforcement (completed 2026-03-04, verified 2026-03-04)
-- [ ] **Phase 3: Core Features** - Member management, interest form, rush info, org content, and SMTP email
+- [x] **Phase 3: Core Features** - Member management, interest form, rush info, org content, and SMTP email (completed 2026-03-04)
 - [ ] **Phase 4: Storage and Finish** - Event PDF upload/listing/deletion via Supabase Storage and README
 
 ## Phase Details
@@ -93,5 +93,5 @@ Phases execute in numeric order: 1 → 2 → 3 → 4
 |-------|----------------|--------|-----------|
 | 1. Foundation | 1/3 | In Progress|  |
 | 2. Authentication | 2/2 | Complete   | 2026-03-04 |
-| 3. Core Features | 2/3 | In Progress|  |
+| 3. Core Features | 3/3 | Complete   | 2026-03-04 |
 | 4. Storage and Finish | 0/2 | Not started | - |

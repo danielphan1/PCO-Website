@@ -52,11 +52,11 @@
 
 ### Org Content
 
-- [ ] **CONT-01**: Anyone can view org history via GET /api/content/history
-- [ ] **CONT-02**: Anyone can view philanthropy info via GET /api/content/philanthropy
-- [ ] **CONT-03**: Anyone can view contact info via GET /api/content/contacts
-- [ ] **CONT-04**: Anyone can view leadership (T6) via GET /api/content/leadership — pulls users with officer role values from users table
-- [ ] **CONT-05**: Admin can update content sections via PUT /api/content/{section} (section: history | philanthropy | contacts)
+- [x] **CONT-01**: Anyone can view org history via GET /api/content/history
+- [x] **CONT-02**: Anyone can view philanthropy info via GET /api/content/philanthropy
+- [x] **CONT-03**: Anyone can view contact info via GET /api/content/contacts
+- [x] **CONT-04**: Anyone can view leadership (T6) via GET /api/content/leadership — pulls users with officer role values from users table
+- [x] **CONT-05**: Admin can update content sections via PUT /api/content/{section} (section: history | philanthropy | contacts)
 
 ### Cross-Cutting
 
@@ -130,11 +130,11 @@ Phase mapping confirmed during roadmap creation (2026-03-03).
 | RUSH-01 | Phase 3 | Complete |
 | RUSH-02 | Phase 3 | Complete |
 | RUSH-03 | Phase 3 | Complete |
-| CONT-01 | Phase 3 | Pending |
-| CONT-02 | Phase 3 | Pending |
-| CONT-03 | Phase 3 | Pending |
-| CONT-04 | Phase 3 | Pending |
-| CONT-05 | Phase 3 | Pending |
+| CONT-01 | Phase 3 | Complete |
+| CONT-02 | Phase 3 | Complete |
+| CONT-03 | Phase 3 | Complete |
+| CONT-04 | Phase 3 | Complete |
+| CONT-05 | Phase 3 | Complete |
 | XCUT-01 | Phase 1 | Pending |
 | XCUT-02 | Phase 1 | Pending |
 | XCUT-03 | Phase 1 | Pending |
