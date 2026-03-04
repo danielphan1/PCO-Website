@@ -62,12 +62,12 @@ Plans:
   3. Anyone can submit the interest form (POST `/v1/interest`); submitting the same email a second time returns 409; a successful submission sends a confirmation email without blocking the response
   4. Rush info is visible publicly when published and returns `{"status": "coming_soon"}` when hidden; admins can update and toggle visibility
   5. All four public org content endpoints (`/v1/content/history`, `/v1/content/philanthropy`, `/v1/content/contacts`, `/v1/content/leadership`) return data; leadership returns users with officer role values from the users table
-**Plans**: TBD
+**Plans**: 3 plans
 
 Plans:
-- [ ] 03-01: SMTP email service, member management endpoints
-- [ ] 03-02: Interest form endpoints, rush info endpoints
-- [ ] 03-03: Org content endpoints (history, philanthropy, contacts, leadership)
+- [ ] 03-01-PLAN.md — SMTP email service, config (FRONTEND_URL), member management endpoints (MEMB-01 to MEMB-05, XCUT-04)
+- [ ] 03-02-PLAN.md — Interest form endpoints (INTR-01, INTR-02), rush info endpoints (RUSH-01, RUSH-02, RUSH-03)
+- [ ] 03-03-PLAN.md — Org content endpoints: history, philanthropy, contacts, leadership, admin update (CONT-01 to CONT-05)
 
 ### Phase 4: Storage and Finish
 **Goal**: Authenticated users can list event PDFs; admins can upload and delete PDFs via Supabase Storage; the project is documented
