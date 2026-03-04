@@ -6,8 +6,6 @@ All tests use the auth_client fixture which seeds:
   - deactivated_user: email="deactivated@test.com",  role="member", is_active=False
 """
 
-import pytest
-
 
 def _admin_headers(auth_client) -> dict:
     """Log in as admin and return Authorization headers."""

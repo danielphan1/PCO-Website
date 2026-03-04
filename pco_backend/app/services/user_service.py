@@ -71,9 +71,7 @@ def create_member(db: Session, payload: MemberCreate, actor: User) -> tuple[User
     return new_user, temp_pw
 
 
-def update_member_role(
-    db: Session, user_id: uuid.UUID, new_role: str, actor: User
-) -> User:
+def update_member_role(db: Session, user_id: uuid.UUID, new_role: str, actor: User) -> User:
     """Update a member's role and write audit log.
 
     Raises:

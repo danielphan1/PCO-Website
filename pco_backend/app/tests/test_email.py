@@ -9,8 +9,6 @@ Verifies that:
 import asyncio
 from unittest.mock import AsyncMock, patch
 
-import pytest
-
 from app.services import email_service
 
 
@@ -26,8 +24,6 @@ def test_send_welcome_email_called(auth_client):
     from app.services.email_service import send_welcome_email
 
     called_with = []
-
-    original_add_task = BackgroundTasks.add_task
 
     def capturing_add_task(self, func, *args, **kwargs):
         called_with.append((func, args, kwargs))
