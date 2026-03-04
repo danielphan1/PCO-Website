@@ -3,18 +3,17 @@ from fastapi.testclient import TestClient
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
-from app.main import app
 from app.core.deps import get_db
+from app.core.security import hash_password
 from app.db.base_class import Base
-from app.models.user import User
-from app.models.refresh_token import RefreshToken  # noqa: F401 — ensures table created
+from app.main import app
 from app.models.audit_log import AuditLog  # noqa: F401 — ensures table created
 from app.models.event_pdf import EventPDF  # noqa: F401 — ensures table created
 from app.models.interest_form import InterestSubmission  # noqa: F401 — ensures table created
 from app.models.org_content import OrgContent  # noqa: F401 — ensures table created
+from app.models.refresh_token import RefreshToken  # noqa: F401 — ensures table created
 from app.models.rush_info import RushInfo  # noqa: F401 — ensures table created
-from app.core.security import hash_password
-
+from app.models.user import User
 
 TEST_DATABASE_URL = "sqlite:///./test.db"
 
@@ -41,7 +40,10 @@ def db_session():
 
 @pytest.fixture(scope="module")
 def auth_client(db_session):
-    """TestClient with DB overridden to in-memory SQLite. Seeds one active user and one deactivated user."""
+    """TestClient with DB overridden to in-memory SQLite.
+
+    Seeds one active user, one admin user, and one deactivated user.
+    """
 
     def override_get_db():
         try:

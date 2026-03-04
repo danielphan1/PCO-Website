@@ -3,6 +3,7 @@
 Uses PyJWT (pyjwt>=2.8) for JWT encode/decode.
 Uses bcrypt directly (NOT passlib — passlib 1.7.4 + bcrypt 5.0.0 is broken).
 """
+
 import hashlib
 import secrets
 from datetime import datetime, timedelta, timezone
