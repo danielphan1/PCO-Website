@@ -19,9 +19,9 @@
 
 - [x] **AUTH-01**: User can log in with email/password via POST /api/auth/login — returns JWT access token + refresh token (refresh token stored in DB)
 - [x] **AUTH-02**: User can refresh access token via POST /api/auth/refresh — exchange valid DB-stored refresh token for new access token
-- [ ] **AUTH-03**: Authenticated user can view own profile via GET /api/users/me
-- [ ] **AUTH-04**: JWT dependency function (get_current_user) validates bearer token on all protected routes
-- [ ] **AUTH-05**: RBAC dependency (require_admin) enforces admin role on all /api/admin/* routes
+- [x] **AUTH-03**: Authenticated user can view own profile via GET /api/users/me
+- [x] **AUTH-04**: JWT dependency function (get_current_user) validates bearer token on all protected routes
+- [x] **AUTH-05**: RBAC dependency (require_admin) enforces admin role on all /api/admin/* routes
 - [x] **AUTH-06**: Deactivated users are rejected at login and token refresh
 - [x] **AUTH-07**: Passwords are hashed with bcrypt via passlib before storage
 
@@ -112,9 +112,9 @@ Phase mapping confirmed during roadmap creation (2026-03-03).
 | INFRA-07 | Phase 1 | Complete |
 | AUTH-01 | Phase 2 | Complete |
 | AUTH-02 | Phase 2 | Complete |
-| AUTH-03 | Phase 2 | Pending |
-| AUTH-04 | Phase 2 | Pending |
-| AUTH-05 | Phase 2 | Pending |
+| AUTH-03 | Phase 2 | Complete |
+| AUTH-04 | Phase 2 | Complete |
+| AUTH-05 | Phase 2 | Complete |
 | AUTH-06 | Phase 2 | Complete |
 | AUTH-07 | Phase 2 | Complete |
 | MEMB-01 | Phase 3 | Pending |

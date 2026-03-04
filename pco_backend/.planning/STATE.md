@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: executing
-stopped_at: Completed 02-authentication-02-01-PLAN.md
-last_updated: "2026-03-04T10:23:51.470Z"
+stopped_at: Completed 02-authentication-02-02-PLAN.md — awaiting human checkpoint verify Task 3
+last_updated: "2026-03-04T10:30:40.977Z"
 last_activity: 2026-03-04 — Completed Plan 01-01
 progress:
   total_phases: 4
-  completed_phases: 1
+  completed_phases: 2
   total_plans: 5
-  completed_plans: 4
+  completed_plans: 5
   percent: 8
 ---
 
@@ -52,6 +52,7 @@ Progress: [█░░░░░░░░░] 8%
 *Updated after each plan completion*
 | Phase 01-foundation P01 | 3min | 2 tasks | 16 files |
 | Phase 02-authentication P01 | 6min | 3 tasks | 7 files |
+| Phase 02-authentication P02 | 4min | 2 tasks | 6 files |
 
 ## Accumulated Context
 
@@ -70,6 +71,9 @@ Recent decisions affecting current work:
 - [Phase 02-authentication]: _dummy_verify() runs bcrypt.checkpw on user-not-found path to prevent timing-based user enumeration
 - [Phase 02-authentication]: DB write order on refresh: insert new token first, revoke old second, single commit — client retains old token if DB fails
 - [Phase 02-authentication]: SHA-256 for refresh token storage hash (not bcrypt) — 256-bit entropy makes brute-force pre-image infeasible
+- [Phase 02-authentication]: oauth2_scheme tokenUrl set to /v1/auth/login — matches actual login route, enables Swagger Authorize button
+- [Phase 02-authentication]: UUID str-to-uuid.UUID conversion in get_current_user — SQLAlchemy UUID(as_uuid=True) requires uuid.UUID object, ValueError on invalid UUID mapped to 401
+- [Phase 02-authentication]: require_admin admin stub routes updated with GET / — needed for RBAC tests to exercise the gate; Phase 3 replaces stub bodies
 
 ### Pending Todos
 
@@ -82,6 +86,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-04T10:23:51.468Z
-Stopped at: Completed 02-authentication-02-01-PLAN.md
+Last session: 2026-03-04T10:30:40.975Z
+Stopped at: Completed 02-authentication-02-02-PLAN.md — awaiting human checkpoint verify Task 3
 Resume file: None

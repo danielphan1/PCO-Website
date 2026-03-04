@@ -13,7 +13,7 @@ Starting from an empty scaffold (folder structure and FastAPI initialization onl
 Decimal phases appear between their surrounding integers in numeric order.
 
 - [ ] **Phase 1: Foundation** - Database schema, config hardening, security utilities, and infra prerequisites
-- [ ] **Phase 2: Authentication** - JWT login, token refresh, user profile, and RBAC enforcement
+- [x] **Phase 2: Authentication** - JWT login, token refresh, user profile, and RBAC enforcement (completed 2026-03-04)
 - [ ] **Phase 3: Core Features** - Member management, interest form, rush info, org content, and SMTP email
 - [ ] **Phase 4: Storage and Finish** - Event PDF upload/listing/deletion via Supabase Storage and README
 
@@ -92,6 +92,6 @@ Phases execute in numeric order: 1 → 2 → 3 → 4
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Foundation | 1/3 | In Progress|  |
-| 2. Authentication | 0/2 | Not started | - |
+| 2. Authentication | 2/2 | Complete   | 2026-03-04 |
 | 3. Core Features | 0/3 | Not started | - |
 | 4. Storage and Finish | 0/2 | Not started | - |
