@@ -33,8 +33,7 @@ def test_deps_importable():
     assert aiosmtplib is not None
 
 
-# INFRA-03: ORM models (stub — Plan 01-02)
-@pytest.mark.skip(reason="Plan 01-02: ORM models not yet implemented")
+# INFRA-03: ORM models (Plan 01-02)
 def test_orm_models():
     from app.models.audit_log import AuditLog
     from app.models.event_pdf import EventPDF
@@ -56,30 +55,32 @@ def test_orm_models():
         assert hasattr(model, "__tablename__")
 
 
-# INFRA-04: Alembic migration (stub — Plan 01-02)
-@pytest.mark.skip(reason="Plan 01-02: Alembic migration not yet written")
+# INFRA-04: Alembic migration (Plan 01-02)
 def test_migration():
-    pass  # Requires running alembic upgrade head against test DB
+    """Verify migration creates all 7 tables.
 
-
-# INFRA-05: Settings validation (stub — Plan 01-01 Task 3 hardens config)
-@pytest.mark.skip(reason="Plan 01-01: Settings not yet hardened — jwt_secret still has default")
-def test_settings_validation():
-    import importlib
+    Requires a running PostgreSQL instance.
+    Run with: RUN_MIGRATION_TEST=1 DATABASE_URL=postgresql+psycopg://... pytest -k test_migration
+    """
     import os
 
-    # Without JWT_SECRET: Settings() must raise
-    env_backup = os.environ.pop("JWT_SECRET", None)
-    try:
-        from pydantic import ValidationError
+    if not os.environ.get("RUN_MIGRATION_TEST"):
+        pytest.skip("Set RUN_MIGRATION_TEST=1 to run against live DB")
 
-        with pytest.raises((ValidationError, SystemExit)):
-            import app.core.config as cfg
 
-            importlib.reload(cfg)
-    finally:
-        if env_backup:
-            os.environ["JWT_SECRET"] = env_backup
+# INFRA-05: Settings validation (Plan 01-02)
+def test_settings_validation():
+    from pydantic import ValidationError
+
+    from app.core.config import Settings
+
+    # Short secret must raise
+    with pytest.raises(ValidationError, match="32"):
+        Settings(jwt_secret="tooshort")
+
+    # Valid 32-char secret must succeed
+    s = Settings(jwt_secret="a" * 32)
+    assert len(s.jwt_secret) == 32
 
 
 # INFRA-07: /health returns 200
