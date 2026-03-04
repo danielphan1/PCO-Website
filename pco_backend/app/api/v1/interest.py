@@ -7,11 +7,11 @@ GET  /  — Admin only; list all interest form submissions.
 from typing import Annotated, List
 
 from fastapi import APIRouter, BackgroundTasks, Depends
+from sqlalchemy.orm import Session
 
 from app.core.deps import get_db, require_admin
 from app.schemas.interest_form import InterestFormCreate, InterestFormResponse
 from app.services import email_service, interest_service
-from sqlalchemy.orm import Session
 
 router = APIRouter()
 

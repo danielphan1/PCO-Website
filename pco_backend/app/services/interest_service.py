@@ -13,7 +13,9 @@ def submit_interest(db: Session, payload: InterestFormCreate) -> InterestSubmiss
     Raises:
         409 — if an entry with the same email already exists
     """
-    existing = db.query(InterestSubmission).filter(InterestSubmission.email == payload.email).first()
+    existing = (
+        db.query(InterestSubmission).filter(InterestSubmission.email == payload.email).first()
+    )
     if existing:
         raise HTTPException(
             status_code=status.HTTP_409_CONFLICT,
