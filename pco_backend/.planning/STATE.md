@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: executing
-stopped_at: Completed 04-storage-and-finish-01-PLAN.md
-last_updated: "2026-03-05T05:45:59.341Z"
+stopped_at: Completed 04-storage-and-finish-02-PLAN.md
+last_updated: "2026-03-05T05:50:54.227Z"
 last_activity: 2026-03-04 — Completed Plan 01-01
 progress:
   total_phases: 4
-  completed_phases: 3
+  completed_phases: 4
   total_plans: 11
-  completed_plans: 10
+  completed_plans: 11
   percent: 8
 ---
 
@@ -58,6 +58,7 @@ Progress: [█░░░░░░░░░] 8%
 | Phase 03-core-features P03 | 3min | 3 tasks | 4 files |
 | Phase 04-storage-and-finish P03 | 2min | 2 tasks | 2 files |
 | Phase 04-storage-and-finish P01 | 3min | 3 tasks | 7 files |
+| Phase 04-storage-and-finish P02 | 5min | 2 tasks | 2 files |
 
 ## Accumulated Context
 
@@ -90,6 +91,9 @@ Recent decisions affecting current work:
 - [Phase 04-storage-and-finish]: README targets future developer taking over the project — concise and practical, not a tutorial
 - [Phase 04-storage-and-finish]: Lazy Supabase client init in _get_client() avoids create_client empty-string failure at import time in tests
 - [Phase 04-storage-and-finish]: upload_event returns tuple[EventPDF, str|None] so router never imports storage_service — single patch target for all tests
+- [Phase 04-storage-and-finish]: Router does not import storage_service — all storage calls encapsulated in service layer for single patch point in tests
+- [Phase 04-storage-and-finish]: POST /v1/admin/events uses response_model=EventResponse for typed 201 response with Pydantic validation
+- [Phase 04-storage-and-finish]: upload_event_pdf is async def to await UploadFile.read() coroutine; service functions remain sync
 
 ### Pending Todos
 
@@ -102,6 +106,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-05T05:45:59.339Z
-Stopped at: Completed 04-storage-and-finish-01-PLAN.md
+Last session: 2026-03-05T05:50:54.225Z
+Stopped at: Completed 04-storage-and-finish-02-PLAN.md
 Resume file: None
