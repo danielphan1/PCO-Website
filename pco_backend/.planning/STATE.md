@@ -1,111 +1,66 @@
 ---
 gsd_state_version: 1.0
 milestone: v1.0
-milestone_name: milestone
-status: executing
-stopped_at: Completed 04-storage-and-finish-02-PLAN.md
-last_updated: "2026-03-05T05:54:11.405Z"
-last_activity: 2026-03-04 — Completed Plan 01-01
+milestone_name: MVP
+status: milestone_complete
+stopped_at: v1.0 milestone archived 2026-03-05
+last_updated: "2026-03-05T21:00:00.000Z"
+last_activity: 2026-03-05 — Shipped v1.0 MVP
 progress:
   total_phases: 4
   completed_phases: 4
   total_plans: 11
   completed_plans: 11
-  percent: 8
+  percent: 100
 ---
 
 # Project State
 
 ## Project Reference
 
-See: .planning/PROJECT.md (updated 2026-03-03)
+See: .planning/PROJECT.md (updated 2026-03-05 after v1.0 milestone)
 
 **Core value:** Members and admins can authenticate and access chapter resources through a secure, role-gated REST API
-**Current focus:** Phase 1 - Foundation
+**Current focus:** Planning next milestone — run /gsd:new-milestone
 
 ## Current Position
 
-Phase: 1 of 4 (Foundation)
-Plan: 1 of 3 in current phase
-Status: In progress
-Last activity: 2026-03-04 — Completed Plan 01-01
+Phase: Milestone complete — v1.0 MVP shipped
+Status: Between milestones
 
-Progress: [█░░░░░░░░░] 8%
+Progress: [██████████] 100%
 
 ## Performance Metrics
 
-**Velocity:**
-- Total plans completed: 0
-- Average duration: -
-- Total execution time: -
+**Velocity (v1.0):**
+- Total plans completed: 11
+- Timeline: 2 days (2026-03-03 → 2026-03-05)
 
 **By Phase:**
 
-| Phase | Plans | Total | Avg/Plan |
-|-------|-------|-------|----------|
-| - | - | - | - |
-
-**Recent Trend:**
-- Last 5 plans: -
-- Trend: -
-
-*Updated after each plan completion*
-| Phase 01-foundation P01 | 3min | 2 tasks | 16 files |
-| Phase 02-authentication P01 | 6min | 3 tasks | 7 files |
-| Phase 02-authentication P02 | 4min | 2 tasks | 6 files |
-| Phase 03-core-features P01 | 6min | 3 tasks | 8 files |
-| Phase 03-core-features P02 | 8min | 3 tasks | 10 files |
-| Phase 03-core-features P03 | 3min | 3 tasks | 4 files |
-| Phase 04-storage-and-finish P03 | 2min | 2 tasks | 2 files |
-| Phase 04-storage-and-finish P01 | 3min | 3 tasks | 7 files |
-| Phase 04-storage-and-finish P02 | 5min | 2 tasks | 2 files |
+| Phase | Plans | Total Time | Avg/Plan |
+|-------|-------|------------|----------|
+| 01-foundation | 3 | ~9min | 3min |
+| 02-authentication | 2 | 10min | 5min |
+| 03-core-features | 3 | 17min | 6min |
+| 04-storage-and-finish | 3 | 10min | 3min |
 
 ## Accumulated Context
 
 ### Decisions
 
-Decisions are logged in PROJECT.md Key Decisions table.
-Recent decisions affecting current work:
-
-- [Pre-phase]: Replace python-jose with PyJWT before writing any auth code (CVE risk, alg:none bypass)
-- [Pre-phase]: jwt_secret must have no default value; enforce minimum 32 characters at startup
-- [Pre-phase]: Use synchronous SQLAlchemy (not async) — sync def endpoints run in FastAPI thread pool safely
-- [Pre-phase]: Supabase Storage bucket must be private; store relative paths in DB, not full URLs
-- [Phase 01-foundation]: Removed python-jose (no transitive conflict), replaced with PyJWT>=2.8 — No other package depended on python-jose; CVE risk eliminated at the library boundary
-- [Phase 01-foundation]: Ruff added as dev dep (not globally installed), all format/lint violations auto-fixed on activation — Activating ruff config for the first time requires fixing pre-existing violations to maintain ruff check . exits 0 invariant
-- [Phase 02-authentication]: bcrypt direct dependency replaces passlib — passlib 1.7.4 + bcrypt 5.0.0 broken upstream
-- [Phase 02-authentication]: _dummy_verify() runs bcrypt.checkpw on user-not-found path to prevent timing-based user enumeration
-- [Phase 02-authentication]: DB write order on refresh: insert new token first, revoke old second, single commit — client retains old token if DB fails
-- [Phase 02-authentication]: SHA-256 for refresh token storage hash (not bcrypt) — 256-bit entropy makes brute-force pre-image infeasible
-- [Phase 02-authentication]: oauth2_scheme tokenUrl set to /v1/auth/login — matches actual login route, enables Swagger Authorize button
-- [Phase 02-authentication]: UUID str-to-uuid.UUID conversion in get_current_user — SQLAlchemy UUID(as_uuid=True) requires uuid.UUID object, ValueError on invalid UUID mapped to 401
-- [Phase 02-authentication]: require_admin admin stub routes updated with GET / — needed for RBAC tests to exercise the gate; Phase 3 replaces stub bodies
-- [Phase 03-core-features]: pydantic[email] / email-validator added to support EmailStr in MemberCreate schema
-- [Phase 03-core-features]: BackgroundTasks for non-blocking email — HTTP response returned before SMTP attempt; SMTP errors log-and-swallow
-- [Phase 03-core-features]: deactivate_member bulk UPDATE for refresh token revocation — atomic in same db.commit() as is_active=False
-- [Phase 03-core-features]: admin/settings.py MVP stub removed — imported STATE from old interest.py which no longer exists; replaced with empty placeholder router
-- [Phase 03-core-features]: toggle_visibility creates row if none exists — first toggle on empty table sets is_published=True (publish)
-- [Phase 03-core-features]: GET /v1/rush/ returns dict directly when unpublished — no separate schema needed for coming_soon response
-- [Phase 03-core-features]: GET /leadership defined before /{section} in FastAPI router — prevents path param capturing 'leadership' as section name
-- [Phase 03-core-features]: PUT /{section} uses Literal['history', 'philanthropy', 'contacts'] path type for automatic 422 on invalid section
-- [Phase 04-storage-and-finish]: README targets future developer taking over the project — concise and practical, not a tutorial
-- [Phase 04-storage-and-finish]: Lazy Supabase client init in _get_client() avoids create_client empty-string failure at import time in tests
-- [Phase 04-storage-and-finish]: upload_event returns tuple[EventPDF, str|None] so router never imports storage_service — single patch target for all tests
-- [Phase 04-storage-and-finish]: Router does not import storage_service — all storage calls encapsulated in service layer for single patch point in tests
-- [Phase 04-storage-and-finish]: POST /v1/admin/events uses response_model=EventResponse for typed 201 response with Pydantic validation
-- [Phase 04-storage-and-finish]: upload_event_pdf is async def to await UploadFile.read() coroutine; service functions remain sync
+All decisions archived in PROJECT.md Key Decisions table (updated 2026-03-05).
 
 ### Pending Todos
 
-None yet.
+None.
 
 ### Blockers/Concerns
 
-- [Phase 4]: Supabase Storage supabase-py 2.x method signatures are MEDIUM confidence — verify upload(), get_public_url(), create_signed_url(), and remove() parameter formats against current SDK changelog before implementing StorageService
-- [Phase 1]: Verify python-jose transitive dependency conflict before removing it (another installed package may depend on it)
+None — v1.0 complete. Known tech debt recorded in PROJECT.md Context section.
 
 ## Session Continuity
 
-Last session: 2026-03-05T05:50:54.225Z
-Stopped at: Completed 04-storage-and-finish-02-PLAN.md
+Last session: 2026-03-05
+Stopped at: v1.0 milestone archived
 Resume file: None
