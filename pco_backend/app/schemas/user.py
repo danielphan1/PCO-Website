@@ -11,7 +11,6 @@ _AllRolesLiteral = Literal[
     "vp",
     "treasurer",
     "secretary",
-    "sergeant_at_arms",
     "historian",
 ]
 

@@ -10,7 +10,7 @@ from typing import Annotated, Generator
 
 import jwt
 from fastapi import Depends, HTTPException, status
-from fastapi.security import OAuth2PasswordBearer
+from fastapi.security import HTTPAuthorizationCredentials, HTTPBearer
 from sqlalchemy.orm import Session
 
 from app.core.security import decode_access_token
@@ -34,9 +34,8 @@ def get_db() -> Generator[Session, None, None]:
 # Auth dependencies
 # ---------------------------------------------------------------------------
 
-# tokenUrl matches the actual login route for Swagger UI compatibility.
-# The /v1 prefix is already part of the route path registered in router.py.
-oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/v1/auth/login")
+# HTTPBearer shows a simple "Value:" token input in Swagger UI.
+bearer_scheme = HTTPBearer()
 
 _credentials_exception = HTTPException(
     status_code=status.HTTP_401_UNAUTHORIZED,
@@ -46,7 +45,7 @@ _credentials_exception = HTTPException(
 
 
 def get_current_user(
-    token: Annotated[str, Depends(oauth2_scheme)],
+    credentials: Annotated[HTTPAuthorizationCredentials, Depends(bearer_scheme)],
     db: Annotated[Session, Depends(get_db)],
 ) -> User:
     """Validate Bearer JWT and return the authenticated User.
@@ -56,7 +55,7 @@ def get_current_user(
         403 — user account is deactivated
     """
     try:
-        payload = decode_access_token(token)
+        payload = decode_access_token(credentials.credentials)
         user_id_str: str | None = payload.get("sub")
         if user_id_str is None:
             raise _credentials_exception

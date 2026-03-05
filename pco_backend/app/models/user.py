@@ -12,7 +12,7 @@ if TYPE_CHECKING:
     from app.models.audit_log import AuditLog
     from app.models.refresh_token import RefreshToken
 
-OFFICER_ROLES = ["president", "vp", "treasurer", "secretary", "sergeant_at_arms", "historian"]
+OFFICER_ROLES = ["president", "vp", "treasurer", "secretary", "historian"]
 ALL_ROLES = ["member", "admin"] + OFFICER_ROLES
 
 
