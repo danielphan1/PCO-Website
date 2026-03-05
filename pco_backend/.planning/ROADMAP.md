@@ -78,11 +78,12 @@ Plans:
   2. An admin can upload a PDF via POST `/v1/admin/events`; a non-PDF file or a file over 10MB is rejected with a clear error; the file is stored in the private Supabase Storage bucket with a UUID-based filename
   3. An admin can delete an event PDF via DELETE `/v1/admin/events/{id}`; the file is removed from Supabase Storage and the DB record is deleted
   4. The README contains setup instructions, environment variable reference, architecture overview, and a link to `/docs`
-**Plans**: TBD
+**Plans**: 3 plans
 
 Plans:
-- [ ] 04-01: StorageService, event PDF endpoints
-- [ ] 04-02: README
+- [ ] 04-01-PLAN.md — StorageService singleton, event schemas, service layer (list/upload/delete), full 11-test suite
+- [ ] 04-02-PLAN.md — Router wiring: GET /v1/events and POST+DELETE /v1/admin/events (depends on 04-01)
+- [ ] 04-03-PLAN.md — README.md and .env.example (Wave 1 parallel with 04-01)
 
 ## Progress
 
@@ -94,4 +95,4 @@ Phases execute in numeric order: 1 → 2 → 3 → 4
 | 1. Foundation | 1/3 | In Progress|  |
 | 2. Authentication | 2/2 | Complete   | 2026-03-04 |
 | 3. Core Features | 3/3 | Complete   | 2026-03-04 |
-| 4. Storage and Finish | 0/2 | Not started | - |
+| 4. Storage and Finish | 0/3 | Not started | - |
