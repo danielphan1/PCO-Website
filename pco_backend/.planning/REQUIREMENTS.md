@@ -65,7 +65,7 @@
 - [ ] **XCUT-03**: CORS configured for localhost:3000 and production domain — no wildcard origins
 - [x] **XCUT-04**: SMTP email (aiosmtplib) sends welcome and confirmation emails via FastAPI BackgroundTasks (non-blocking)
 - [x] **XCUT-05**: Ruff configured in pyproject.toml for formatting (ruff format) and linting (ruff check) — replaces Black
-- [ ] **XCUT-06**: README includes setup instructions, architecture overview, environment variable reference, and link to /docs
+- [x] **XCUT-06**: README includes setup instructions, architecture overview, environment variable reference, and link to /docs
 
 ## v2 Requirements
 
@@ -140,7 +140,7 @@ Phase mapping confirmed during roadmap creation (2026-03-03).
 | XCUT-03 | Phase 1 | Pending |
 | XCUT-04 | Phase 3 | Complete |
 | XCUT-05 | Phase 1 | Complete |
-| XCUT-06 | Phase 4 | Pending |
+| XCUT-06 | Phase 4 | Complete |
 
 **Coverage:**
 - v1 requirements: 38 total
