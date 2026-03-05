@@ -40,9 +40,9 @@
 
 ### Events / PDFs
 
-- [ ] **EVNT-01**: Authenticated user can list event PDFs via GET /api/events (title, date, url)
-- [ ] **EVNT-02**: Admin can upload event PDF via POST /api/events to Supabase Storage — max 10MB, validates PDF magic bytes (%PDF), stores URL + metadata in DB
-- [ ] **EVNT-03**: Admin can delete event PDF via DELETE /api/events/{id} — removes from Supabase Storage and DB
+- [x] **EVNT-01**: Authenticated user can list event PDFs via GET /api/events (title, date, url)
+- [x] **EVNT-02**: Admin can upload event PDF via POST /api/events to Supabase Storage — max 10MB, validates PDF magic bytes (%PDF), stores URL + metadata in DB
+- [x] **EVNT-03**: Admin can delete event PDF via DELETE /api/events/{id} — removes from Supabase Storage and DB
 
 ### Rush Week
 
@@ -124,9 +124,9 @@ Phase mapping confirmed during roadmap creation (2026-03-03).
 | MEMB-05 | Phase 3 | Complete |
 | INTR-01 | Phase 3 | Complete |
 | INTR-02 | Phase 3 | Complete |
-| EVNT-01 | Phase 4 | Pending |
-| EVNT-02 | Phase 4 | Pending |
-| EVNT-03 | Phase 4 | Pending |
+| EVNT-01 | Phase 4 | Complete |
+| EVNT-02 | Phase 4 | Complete |
+| EVNT-03 | Phase 4 | Complete |
 | RUSH-01 | Phase 3 | Complete |
 | RUSH-02 | Phase 3 | Complete |
 | RUSH-03 | Phase 3 | Complete |

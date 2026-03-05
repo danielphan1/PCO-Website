@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: executing
-stopped_at: Completed 04-03-PLAN.md
-last_updated: "2026-03-05T05:44:51.004Z"
+stopped_at: Completed 04-storage-and-finish-01-PLAN.md
+last_updated: "2026-03-05T05:45:59.341Z"
 last_activity: 2026-03-04 — Completed Plan 01-01
 progress:
   total_phases: 4
   completed_phases: 3
   total_plans: 11
-  completed_plans: 9
+  completed_plans: 10
   percent: 8
 ---
 
@@ -57,6 +57,7 @@ Progress: [█░░░░░░░░░] 8%
 | Phase 03-core-features P02 | 8min | 3 tasks | 10 files |
 | Phase 03-core-features P03 | 3min | 3 tasks | 4 files |
 | Phase 04-storage-and-finish P03 | 2min | 2 tasks | 2 files |
+| Phase 04-storage-and-finish P01 | 3min | 3 tasks | 7 files |
 
 ## Accumulated Context
 
@@ -87,6 +88,8 @@ Recent decisions affecting current work:
 - [Phase 03-core-features]: GET /leadership defined before /{section} in FastAPI router — prevents path param capturing 'leadership' as section name
 - [Phase 03-core-features]: PUT /{section} uses Literal['history', 'philanthropy', 'contacts'] path type for automatic 422 on invalid section
 - [Phase 04-storage-and-finish]: README targets future developer taking over the project — concise and practical, not a tutorial
+- [Phase 04-storage-and-finish]: Lazy Supabase client init in _get_client() avoids create_client empty-string failure at import time in tests
+- [Phase 04-storage-and-finish]: upload_event returns tuple[EventPDF, str|None] so router never imports storage_service — single patch target for all tests
 
 ### Pending Todos
 
@@ -99,6 +102,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-05T05:44:51.002Z
-Stopped at: Completed 04-03-PLAN.md
+Last session: 2026-03-05T05:45:59.339Z
+Stopped at: Completed 04-storage-and-finish-01-PLAN.md
 Resume file: None
