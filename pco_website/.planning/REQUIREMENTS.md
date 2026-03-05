@@ -124,23 +124,69 @@
 
 ## Traceability
 
-Updated during roadmap creation.
+Updated during roadmap creation: 2026-03-05
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| INFRA-01–07 | Phase 1 | Pending |
-| THEME-01–09 | Phase 1 | Pending |
-| PUB-01–12 | Phase 2 | Pending |
-| AUTH-01–06 | Phase 3 | Pending |
-| MEMBER-01–04 | Phase 4 | Pending |
-| ADMIN-01–11 | Phase 4 | Pending |
-| QUAL-01–04 | Phase 5 | Pending |
+| INFRA-01 | Phase 1: Foundation | Pending |
+| INFRA-02 | Phase 1: Foundation | Pending |
+| INFRA-03 | Phase 1: Foundation | Pending |
+| INFRA-04 | Phase 1: Foundation | Pending |
+| INFRA-05 | Phase 1: Foundation | Pending |
+| INFRA-06 | Phase 1: Foundation | Pending |
+| INFRA-07 | Phase 1: Foundation | Pending |
+| THEME-01 | Phase 1: Foundation | Pending |
+| THEME-02 | Phase 1: Foundation | Pending |
+| THEME-03 | Phase 1: Foundation | Pending |
+| THEME-04 | Phase 1: Foundation | Pending |
+| THEME-05 | Phase 1: Foundation | Pending |
+| THEME-06 | Phase 1: Foundation | Pending |
+| THEME-07 | Phase 1: Foundation | Pending |
+| THEME-08 | Phase 1: Foundation | Pending |
+| THEME-09 | Phase 1: Foundation | Pending |
+| PUB-01 | Phase 2: Public Site | Pending |
+| PUB-02 | Phase 2: Public Site | Pending |
+| PUB-03 | Phase 2: Public Site | Pending |
+| PUB-04 | Phase 2: Public Site | Pending |
+| PUB-05 | Phase 2: Public Site | Pending |
+| PUB-06 | Phase 2: Public Site | Pending |
+| PUB-07 | Phase 2: Public Site | Pending |
+| PUB-08 | Phase 2: Public Site | Pending |
+| PUB-09 | Phase 2: Public Site | Pending |
+| PUB-10 | Phase 2: Public Site | Pending |
+| PUB-11 | Phase 2: Public Site | Pending |
+| PUB-12 | Phase 2: Public Site | Pending |
+| AUTH-01 | Phase 3: Authentication | Pending |
+| AUTH-02 | Phase 3: Authentication | Pending |
+| AUTH-03 | Phase 3: Authentication | Pending |
+| AUTH-04 | Phase 3: Authentication | Pending |
+| AUTH-05 | Phase 3: Authentication | Pending |
+| AUTH-06 | Phase 3: Authentication | Pending |
+| MEMBER-01 | Phase 4: Member Dashboard | Pending |
+| MEMBER-02 | Phase 4: Member Dashboard | Pending |
+| MEMBER-03 | Phase 4: Member Dashboard | Pending |
+| MEMBER-04 | Phase 4: Member Dashboard | Pending |
+| ADMIN-01 | Phase 5: Admin CMS | Pending |
+| ADMIN-02 | Phase 5: Admin CMS | Pending |
+| ADMIN-03 | Phase 5: Admin CMS | Pending |
+| ADMIN-04 | Phase 5: Admin CMS | Pending |
+| ADMIN-05 | Phase 5: Admin CMS | Pending |
+| ADMIN-06 | Phase 5: Admin CMS | Pending |
+| ADMIN-07 | Phase 5: Admin CMS | Pending |
+| ADMIN-08 | Phase 5: Admin CMS | Pending |
+| ADMIN-09 | Phase 5: Admin CMS | Pending |
+| ADMIN-10 | Phase 5: Admin CMS | Pending |
+| ADMIN-11 | Phase 5: Admin CMS | Pending |
+| QUAL-01 | Phase 6: Quality + Polish | Pending |
+| QUAL-02 | Phase 6: Quality + Polish | Pending |
+| QUAL-03 | Phase 6: Quality + Polish | Pending |
+| QUAL-04 | Phase 6: Quality + Polish | Pending |
 
 **Coverage:**
 - v1 requirements: 48 total
 - Mapped to phases: 48
-- Unmapped: 0 ✓
+- Unmapped: 0
 
 ---
 *Requirements defined: 2026-03-05*
-*Last updated: 2026-03-05 after initial definition*
+*Last updated: 2026-03-05 — traceability updated after roadmap creation (6 phases)*
