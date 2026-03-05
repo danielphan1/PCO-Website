@@ -3,8 +3,6 @@ from typing import Literal
 
 from pydantic import BaseModel, EmailStr
 
-from app.models.user import ALL_ROLES
-
 # Build a Literal type from ALL_ROLES for validation
 _AllRolesLiteral = Literal[
     "member",
