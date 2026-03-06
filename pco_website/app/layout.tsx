@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { EB_Garamond, Cormorant_Garamond } from "next/font/google";
 import { Toaster } from "sonner";
+import { AuthProvider } from "@/contexts/AuthContext";
 import "./globals.css";
 
 const ebGaramond = EB_Garamond({
@@ -32,7 +33,9 @@ export default function RootLayout({
       className={`${ebGaramond.variable} ${cormorantGaramond.variable}`}
     >
       <body>
-        {children}
+        <AuthProvider>
+          {children}
+        </AuthProvider>
         <Toaster theme="dark" richColors position="top-right" />
       </body>
     </html>
