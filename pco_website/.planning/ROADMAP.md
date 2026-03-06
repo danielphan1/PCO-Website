@@ -31,12 +31,12 @@ Decimal phases appear between their surrounding integers in numeric order.
   3. ChromeCard, ChromeButton, SectionTitle, and Divider components render correctly with the black/forest-green/white brand palette on a local dev page
   4. EB Garamond body text and Cormorant Garamond headings load via next/font with no layout shift
   5. SiteLayout header shows responsive navigation that collapses to a hamburger on mobile without horizontal scroll
-**Plans**: TBD
+**Plans**: 3 plans
 
 Plans:
-- [ ] 01-01: Project scaffolding — install dependencies (react-hook-form, zod, sonner, clsx, tailwind-merge), route groups, env setup, Tailwind v4 @theme tokens, next/font
-- [ ] 01-02: API + auth utilities — types/api.ts, lib/auth.ts, lib/api.ts (singleton refresh queue), contexts/AuthContext.tsx, proxy.ts
-- [ ] 01-03: Design system components — ChromeCard, ChromeButton, SectionTitle, Divider, Toast (sonner), SiteLayout with header/footer/mobile nav
+- [ ] 01-01-PLAN.md — Scaffolding: install deps, route groups, globals.css @theme tokens, next/font fonts, .env files
+- [ ] 01-02-PLAN.md — Auth + API infrastructure: types, cn(), auth helpers, apiFetch() singleton refresh, AuthContext, AuthGuard, proxy.ts
+- [ ] 01-03-PLAN.md — Design system: ChromeCard, ChromeButton, SectionTitle, Divider, SiteLayout, /dev-preview page
 
 ### Phase 2: Public Site
 **Goal**: Prospective rushees can learn about PCO, explore rush info, and submit an interest form — all rendered as fast, SEO-optimized server pages
