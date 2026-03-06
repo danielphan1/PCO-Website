@@ -125,7 +125,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Foundation | 1/3 | In Progress|  |
+| 1. Foundation | 2/3 | In Progress|  |
 | 2. Public Site | 0/3 | Not started | - |
 | 3. Authentication | 0/2 | Not started | - |
 | 4. Member Dashboard | 0/1 | Not started | - |

@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: planning
-stopped_at: Completed 01-foundation-01-PLAN.md
-last_updated: "2026-03-06T08:35:58.734Z"
+stopped_at: Completed 01-foundation-02-PLAN.md
+last_updated: "2026-03-06T08:39:37.589Z"
 last_activity: 2026-03-05 — Roadmap created; 48 requirements mapped across 6 phases
 progress:
   total_phases: 6
   completed_phases: 0
   total_plans: 3
-  completed_plans: 1
+  completed_plans: 2
   percent: 0
 ---
 
@@ -51,6 +51,7 @@ Progress: [░░░░░░░░░░] 0%
 
 *Updated after each plan completion*
 | Phase 01-foundation P01 | 5 | 3 tasks | 8 files |
+| Phase 01-foundation P02 | 2 | 3 tasks | 10 files |
 
 ## Accumulated Context
 
@@ -66,6 +67,8 @@ Recent decisions affecting current work:
 - [Phase 01-01]: Used @theme inline (not plain @theme) so font values referencing CSS vars resolve correctly in Tailwind v4
 - [Phase 01-01]: Cormorant Garamond requires explicit weight array — not a variable font; weights 300-700 specified in next/font constructor
 - [Phase 01-01]: Added !.env.example exception to .gitignore so template can be committed for developer onboarding
+- [Phase 01-foundation]: Singleton refreshPromise prevents duplicate token refresh calls when concurrent requests all receive 401
+- [Phase 01-foundation]: auth-hint cookie is optimistic hint only — real authorization in FastAPI; proxy.ts (not middleware.ts) required for Next.js 16
 
 ### Pending Todos
 
@@ -80,6 +83,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-06T08:35:58.732Z
-Stopped at: Completed 01-foundation-01-PLAN.md
+Last session: 2026-03-06T08:39:37.587Z
+Stopped at: Completed 01-foundation-02-PLAN.md
 Resume file: None

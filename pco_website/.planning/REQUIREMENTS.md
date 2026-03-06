@@ -7,11 +7,11 @@
 
 ### Infrastructure
 
-- [ ] **INFRA-01**: API client wrapper (`lib/api.ts`) with base URL from `NEXT_PUBLIC_API_BASE`, automatic `Authorization: Bearer` header injection, and clean error handling
-- [ ] **INFRA-02**: Token refresh on 401 via singleton `refreshPromise` to prevent race condition when concurrent requests expire simultaneously
-- [ ] **INFRA-03**: Auth state management via React Context (`AuthContext`) with user object, tokens, loading state, login/logout actions
-- [ ] **INFRA-04**: `AuthGuard` client-side hook/component that redirects unauthenticated users to `/login` and non-admin users on admin routes to `/dashboard`
-- [ ] **INFRA-05**: `proxy.ts` (Next.js 16 naming — NOT `middleware.ts`) with `auth-hint` cookie bridge for optimistic server-side redirects
+- [x] **INFRA-01**: API client wrapper (`lib/api.ts`) with base URL from `NEXT_PUBLIC_API_BASE`, automatic `Authorization: Bearer` header injection, and clean error handling
+- [x] **INFRA-02**: Token refresh on 401 via singleton `refreshPromise` to prevent race condition when concurrent requests expire simultaneously
+- [x] **INFRA-03**: Auth state management via React Context (`AuthContext`) with user object, tokens, loading state, login/logout actions
+- [x] **INFRA-04**: `AuthGuard` client-side hook/component that redirects unauthenticated users to `/login` and non-admin users on admin routes to `/dashboard`
+- [x] **INFRA-05**: `proxy.ts` (Next.js 16 naming — NOT `middleware.ts`) with `auth-hint` cookie bridge for optimistic server-side redirects
 - [x] **INFRA-06**: `.env.example` with `NEXT_PUBLIC_API_BASE=http://localhost:8000`
 - [x] **INFRA-07**: Next.js App Router route groups: `(public)`, `(auth)`, `(member)`, `(admin)` established
 
@@ -128,11 +128,11 @@ Updated during roadmap creation: 2026-03-05
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| INFRA-01 | Phase 1: Foundation | Pending |
-| INFRA-02 | Phase 1: Foundation | Pending |
-| INFRA-03 | Phase 1: Foundation | Pending |
-| INFRA-04 | Phase 1: Foundation | Pending |
-| INFRA-05 | Phase 1: Foundation | Pending |
+| INFRA-01 | Phase 1: Foundation | Complete |
+| INFRA-02 | Phase 1: Foundation | Complete |
+| INFRA-03 | Phase 1: Foundation | Complete |
+| INFRA-04 | Phase 1: Foundation | Complete |
+| INFRA-05 | Phase 1: Foundation | Complete |
 | INFRA-06 | Phase 1: Foundation | Complete |
 | INFRA-07 | Phase 1: Foundation | Complete |
 | THEME-01 | Phase 1: Foundation | Complete |
