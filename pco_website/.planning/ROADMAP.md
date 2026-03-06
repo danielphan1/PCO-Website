@@ -12,7 +12,7 @@ The frontend is built layer by layer, each phase unlocking the next. Phase 1 est
 
 Decimal phases appear between their surrounding integers in numeric order.
 
-- [ ] **Phase 1: Foundation** - API client, auth infrastructure, design system tokens and components
+- [x] **Phase 1: Foundation** - API client, auth infrastructure, design system tokens and components (completed 2026-03-06)
 - [ ] **Phase 2: Public Site** - All public marketing pages (/, /rush, /join, /history, /philanthropy, /contact) as Server Components
 - [ ] **Phase 3: Authentication** - Login page, JWT token lifecycle, route protection, AuthGuard
 - [ ] **Phase 4: Member Dashboard** - Protected /dashboard with profile, event PDFs, and leadership contacts
@@ -125,7 +125,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Foundation | 2/3 | In Progress|  |
+| 1. Foundation | 3/3 | Complete   | 2026-03-06 |
 | 2. Public Site | 0/3 | Not started | - |
 | 3. Authentication | 0/2 | Not started | - |
 | 4. Member Dashboard | 0/1 | Not started | - |
