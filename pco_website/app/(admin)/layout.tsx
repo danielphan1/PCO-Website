@@ -1,5 +1,11 @@
-// AuthGuard (admin) will be added in plan 01-02 once it exists
-// Shell only — do not add auth logic here yet
-export default function AdminLayout({ children }: { children: React.ReactNode }) {
-  return <>{children}</>;
+"use client";
+
+import { AuthGuard } from "@/components/layout/AuthGuard";
+
+export default function AdminLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return <AuthGuard requiredRole="admin">{children}</AuthGuard>;
 }
