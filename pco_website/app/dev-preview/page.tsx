@@ -2,6 +2,9 @@
 // This page is NOT linked from anywhere; navigate to /dev-preview manually
 // Remove or gate behind NODE_ENV check before production if desired
 
+"use client";
+
+import { toast } from "sonner";
 import { ChromeCard } from "@/components/ui/ChromeCard";
 import { ChromeButton } from "@/components/ui/ChromeButton";
 import { SectionTitle } from "@/components/ui/SectionTitle";
@@ -71,15 +74,17 @@ export default function DevPreviewPage() {
         <Divider showDot={false} />
       </section>
 
-      {/* Toast trigger note */}
+      {/* Toast */}
       <section className="space-y-4">
         <p className="text-chrome/60 text-xs tracking-widest uppercase">Toast (Sonner)</p>
-        <p className="text-white/50 text-sm">
-          To test toasts, open browser console and run:
-        </p>
-        <code className="block bg-card-elevated text-chrome text-sm p-4 rounded border border-white/10">
-          {`// In browser console:\nimport('sonner').then(m => { m.toast.success("Success!"); m.toast.error("Error!"); })`}
-        </code>
+        <div className="flex flex-wrap gap-4">
+          <ChromeButton variant="primary" onClick={() => toast.success("Success! Operation completed.")}>
+            Success Toast
+          </ChromeButton>
+          <ChromeButton variant="secondary" onClick={() => toast.error("Error! Something went wrong.")}>
+            Error Toast
+          </ChromeButton>
+        </div>
       </section>
     </div>
   );
