@@ -6,9 +6,9 @@ import { ChromeButton } from "@/components/ui/ChromeButton";
 
 const NAV_LINKS = [
   { label: "RUSH", href: "/rush" },
-  { label: "HISTORY", href: "/history" },
-  { label: "PHILANTHROPY", href: "/philanthropy" },
-  { label: "CONTACT", href: "/contact" },
+  { label: "HISTORY", href: "/#history" },
+  { label: "PHILANTHROPY", href: "/#philanthropy" },
+  { label: "CONTACT", href: "/#contact" },
 ];
 
 function HamburgerIcon({ open }: { open: boolean }) {
