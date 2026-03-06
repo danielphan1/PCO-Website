@@ -48,12 +48,13 @@ Plans:
   3. Submitting /join with an email already in the system shows a friendly message ("Looks like you've already signed up!"), not a raw error
   4. /history, /philanthropy, and /contact pages render content fetched from the API at build time with ISR revalidation
   5. Page source for /history includes a `<title>` tag and `<meta name="description">` (confirming Server Component SSR)
-**Plans**: TBD
+**Plans**: 4 plans
 
 Plans:
-- [ ] 02-01: Home page — hero with CTAs, section previews pulling from API, ISR fetch pattern
-- [ ] 02-02: /rush and /join pages — coming-soon fallback, interest form with react-hook-form + zod, 409 duplicate handling
-- [ ] 02-03: /history, /philanthropy, /contact pages — Server Component fetch with ISR, email mailto links
+- [ ] 02-01-PLAN.md — Foundation wiring: SiteLayout into public layout, nav href updates, Phase 2 type definitions, bounce-gentle keyframe, @hookform/resolvers install
+- [ ] 02-02-PLAN.md — Homepage: full-viewport hero with CTAs, long-scroll section previews (History, Philanthropy, Leadership, Contact) with ISR fetch
+- [ ] 02-03-PLAN.md — /rush and /join: two-state rush page (Server Component), interest form with react-hook-form + zod + 409 handling (client component)
+- [ ] 02-04-PLAN.md — /history, /philanthropy, /contact: Server Component ISR pages, parallel fetch on contact, mailto links; QA checkpoint
 
 ### Phase 3: Authentication
 **Goal**: Members can log in, stay logged in across browser sessions, and be redirected correctly based on their role
@@ -126,7 +127,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Foundation | 3/3 | Complete   | 2026-03-06 |
-| 2. Public Site | 0/3 | Not started | - |
+| 2. Public Site | 0/4 | Not started | - |
 | 3. Authentication | 0/2 | Not started | - |
 | 4. Member Dashboard | 0/1 | Not started | - |
 | 5. Admin CMS | 0/3 | Not started | - |
