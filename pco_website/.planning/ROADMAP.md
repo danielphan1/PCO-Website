@@ -66,11 +66,11 @@ Plans:
   3. Clicking Logout from any page clears the session and redirects to /login
   4. Navigating directly to /dashboard while logged out redirects to /login without showing any dashboard content
   5. A logged-in non-admin navigating to /admin/* is redirected to /dashboard with an "Access Denied" message visible
-**Plans**: TBD
+**Plans**: 2 plans
 
 Plans:
-- [ ] 03-01: Login page (LoginForm client component, email/password fields, admin-created-only note, error state)
-- [ ] 03-02: Route protection — AuthGuard in (member) and (admin) layout.tsx, access denied UI, logout action
+- [ ] 03-01-PLAN.md — Login page: FullPageSpinner component, LoginForm client component (ChromeCard layout, email/password, admin note, toast error)
+- [ ] 03-02-PLAN.md — Auth lifecycle: AuthContext /v1/users/me hydration, AuthGuard spinner, SiteLayout conditional header, dashboard stub + access-denied toast
 
 ### Phase 4: Member Dashboard
 **Goal**: Active members can view their event schedule and find leadership contacts without involving anyone else
