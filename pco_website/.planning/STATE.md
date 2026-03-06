@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: planning
-stopped_at: Phase 1 context gathered
-last_updated: "2026-03-06T00:12:39.554Z"
+stopped_at: Completed 01-foundation-01-PLAN.md
+last_updated: "2026-03-06T08:35:58.734Z"
 last_activity: 2026-03-05 — Roadmap created; 48 requirements mapped across 6 phases
 progress:
   total_phases: 6
   completed_phases: 0
-  total_plans: 0
-  completed_plans: 0
+  total_plans: 3
+  completed_plans: 1
   percent: 0
 ---
 
@@ -50,6 +50,7 @@ Progress: [░░░░░░░░░░] 0%
 - Trend: -
 
 *Updated after each plan completion*
+| Phase 01-foundation P01 | 5 | 3 tasks | 8 files |
 
 ## Accumulated Context
 
@@ -62,6 +63,9 @@ Recent decisions affecting current work:
 - [Init]: proxy.ts NOT middleware.ts — Next.js 16 rename; auth-hint cookie for optimistic redirects only; real security in FastAPI
 - [Init]: No component library — custom components required to match Chrome Hearts aesthetic; shadcn/ui not used
 - [Init]: Tailwind v4 @theme in globals.css — no tailwind.config.js; validate class renames before building components
+- [Phase 01-01]: Used @theme inline (not plain @theme) so font values referencing CSS vars resolve correctly in Tailwind v4
+- [Phase 01-01]: Cormorant Garamond requires explicit weight array — not a variable font; weights 300-700 specified in next/font constructor
+- [Phase 01-01]: Added !.env.example exception to .gitignore so template can be committed for developer onboarding
 
 ### Pending Todos
 
@@ -76,6 +80,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-06T00:12:39.552Z
-Stopped at: Phase 1 context gathered
-Resume file: .planning/phases/01-foundation/01-CONTEXT.md
+Last session: 2026-03-06T08:35:58.732Z
+Stopped at: Completed 01-foundation-01-PLAN.md
+Resume file: None

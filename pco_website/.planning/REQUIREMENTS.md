@@ -12,20 +12,20 @@
 - [ ] **INFRA-03**: Auth state management via React Context (`AuthContext`) with user object, tokens, loading state, login/logout actions
 - [ ] **INFRA-04**: `AuthGuard` client-side hook/component that redirects unauthenticated users to `/login` and non-admin users on admin routes to `/dashboard`
 - [ ] **INFRA-05**: `proxy.ts` (Next.js 16 naming — NOT `middleware.ts`) with `auth-hint` cookie bridge for optimistic server-side redirects
-- [ ] **INFRA-06**: `.env.example` with `NEXT_PUBLIC_API_BASE=http://localhost:8000`
-- [ ] **INFRA-07**: Next.js App Router route groups: `(public)`, `(auth)`, `(member)`, `(admin)` established
+- [x] **INFRA-06**: `.env.example` with `NEXT_PUBLIC_API_BASE=http://localhost:8000`
+- [x] **INFRA-07**: Next.js App Router route groups: `(public)`, `(auth)`, `(member)`, `(admin)` established
 
 ### Design System
 
-- [ ] **THEME-01**: Brand tokens defined in `globals.css` `@theme` block: black (#000000) background, forest green (#228B22) accent, white (#FFFFFF) text
-- [ ] **THEME-02**: EB Garamond (body) + Cormorant Garamond (headings) via `next/font/google` with CSS variable registration for Tailwind
+- [x] **THEME-01**: Brand tokens defined in `globals.css` `@theme` block: black (#000000) background, forest green (#228B22) accent, white (#FFFFFF) text
+- [x] **THEME-02**: EB Garamond (body) + Cormorant Garamond (headings) via `next/font/google` with CSS variable registration for Tailwind
 - [ ] **THEME-03**: `SiteLayout` component with responsive header (tracking/uppercase nav), footer, and mobile hamburger menu (no horizontal scroll)
 - [ ] **THEME-04**: `ChromeCard` component with thin metallic gradient border and subtle glow on dark background
 - [ ] **THEME-05**: `ChromeButton` with primary (forest green fill) and secondary (chrome outline) variants; hover sheen animation via CSS
 - [ ] **THEME-06**: `SectionTitle` component using heading font (Cormorant Garamond)
 - [ ] **THEME-07**: `Divider` component: thin chrome gradient line with small green dot accent
-- [ ] **THEME-08**: Toast/alert system via `sonner` with dark theme; success (green), error (red) variants
-- [ ] **THEME-09**: Optional: extremely subtle grain/noise overlay on black backgrounds (low opacity, CSS-only)
+- [x] **THEME-08**: Toast/alert system via `sonner` with dark theme; success (green), error (red) variants
+- [x] **THEME-09**: Optional: extremely subtle grain/noise overlay on black backgrounds (low opacity, CSS-only)
 
 ### Public Pages
 
@@ -133,17 +133,17 @@ Updated during roadmap creation: 2026-03-05
 | INFRA-03 | Phase 1: Foundation | Pending |
 | INFRA-04 | Phase 1: Foundation | Pending |
 | INFRA-05 | Phase 1: Foundation | Pending |
-| INFRA-06 | Phase 1: Foundation | Pending |
-| INFRA-07 | Phase 1: Foundation | Pending |
-| THEME-01 | Phase 1: Foundation | Pending |
-| THEME-02 | Phase 1: Foundation | Pending |
+| INFRA-06 | Phase 1: Foundation | Complete |
+| INFRA-07 | Phase 1: Foundation | Complete |
+| THEME-01 | Phase 1: Foundation | Complete |
+| THEME-02 | Phase 1: Foundation | Complete |
 | THEME-03 | Phase 1: Foundation | Pending |
 | THEME-04 | Phase 1: Foundation | Pending |
 | THEME-05 | Phase 1: Foundation | Pending |
 | THEME-06 | Phase 1: Foundation | Pending |
 | THEME-07 | Phase 1: Foundation | Pending |
-| THEME-08 | Phase 1: Foundation | Pending |
-| THEME-09 | Phase 1: Foundation | Pending |
+| THEME-08 | Phase 1: Foundation | Complete |
+| THEME-09 | Phase 1: Foundation | Complete |
 | PUB-01 | Phase 2: Public Site | Pending |
 | PUB-02 | Phase 2: Public Site | Pending |
 | PUB-03 | Phase 2: Public Site | Pending |
