@@ -41,3 +41,9 @@ body::before {
   0% { transform: translateX(-100%) skewX(-20deg); }
   100% { transform: translateX(250%) skewX(-20deg); }
 }
+
+/* Hero scroll indicator animation — used by homepage chevron (plan 02-02) */
+@keyframes bounce-gentle {
+  0%, 100% { transform: translateY(0); opacity: 1; }
+  50% { transform: translateY(6px); opacity: 0.6; }
+}

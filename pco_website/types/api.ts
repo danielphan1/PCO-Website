@@ -15,3 +15,39 @@ export interface AuthTokens {
 export interface ApiError extends Error {
   status: number;
 }
+
+// Phase 2 — Public site type contracts
+
+export interface LeadershipMember {
+  id: string;
+  name: string;
+  role: string;
+  photo_url?: string; // optional — backend may not return this
+}
+
+export interface RushEvent {
+  id: string;
+  name: string;
+  date: string;
+  time: string;
+  location: string;
+  description?: string;
+}
+
+export interface RushContent {
+  status: "published" | "coming_soon";
+  title?: string;
+  intro?: string;
+  events?: RushEvent[];
+}
+
+export interface ContentSection {
+  title: string;
+  body: string;
+}
+
+export interface ContactInfo {
+  email?: string;
+  phone?: string;
+  address?: string;
+}
