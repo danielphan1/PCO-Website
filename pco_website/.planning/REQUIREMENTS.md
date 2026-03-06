@@ -40,7 +40,7 @@
 - [ ] **PUB-09**: `/history` fetches `GET /v1/content/history`; renders formatted content
 - [ ] **PUB-10**: `/philanthropy` fetches `GET /v1/content/philanthropy`; renders formatted content
 - [ ] **PUB-11**: `/contact` fetches `GET /v1/content/contacts` + `GET /v1/content/leadership`; email addresses are `mailto:` links
-- [ ] **PUB-12**: All public content pages use Next.js Server Components with ISR for SEO performance
+- [x] **PUB-12**: All public content pages use Next.js Server Components with ISR for SEO performance
 
 ### Authentication
 
@@ -155,7 +155,7 @@ Updated during roadmap creation: 2026-03-05
 | PUB-09 | Phase 2: Public Site | Pending |
 | PUB-10 | Phase 2: Public Site | Pending |
 | PUB-11 | Phase 2: Public Site | Pending |
-| PUB-12 | Phase 2: Public Site | Pending |
+| PUB-12 | Phase 2: Public Site | Complete |
 | AUTH-01 | Phase 3: Authentication | Pending |
 | AUTH-02 | Phase 3: Authentication | Pending |
 | AUTH-03 | Phase 3: Authentication | Pending |

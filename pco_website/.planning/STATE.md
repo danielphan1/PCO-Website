@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: completed
-stopped_at: Phase 2 context gathered
-last_updated: "2026-03-06T09:56:34.660Z"
+stopped_at: Completed 02-01-PLAN.md
+last_updated: "2026-03-06T10:18:17.656Z"
 last_activity: 2026-03-06 — Phase 1 Plan 03 complete; all five design system components built and QA approved
 progress:
   total_phases: 6
   completed_phases: 1
-  total_plans: 3
-  completed_plans: 3
+  total_plans: 7
+  completed_plans: 4
   percent: 17
 ---
 
@@ -53,6 +53,7 @@ Progress: [██░░░░░░░░] 17%
 | Phase 01-foundation P01 | 5 | 3 tasks | 8 files |
 | Phase 01-foundation P02 | 2 | 3 tasks | 10 files |
 | Phase 01-foundation P03 | ~45 | 3 tasks | 7 files |
+| Phase 02-public-site P01 | 15 | 2 tasks | 6 files |
 
 ## Accumulated Context
 
@@ -74,6 +75,9 @@ Recent decisions affecting current work:
 - [Phase 01-03]: Sheen animation uses nested span (group-hover:animate-[sheen]) — Tailwind cannot target ::after with arbitrary animation values
 - [Phase 01-03]: transpilePackages: ["sonner"] required in next.config.ts for ESM resolution in Next.js 15+
 - [Phase 01-03]: SiteLayout deferred from root layout — wired in app/(public)/layout.tsx in Phase 2
+- [Phase 02-public-site]: Public layout wraps SiteLayout at route-group level — admin/auth routes stay independent of public chrome
+- [Phase 02-public-site]: History/Philanthropy/Contact nav links use anchor hrefs (/#section) — they are homepage sections, not separate pages
+- [Phase 02-public-site]: app/page.tsx deleted; (public)/page.tsx placeholder owns / route — avoids scaffold conflict
 
 ### Pending Todos
 
@@ -88,6 +92,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-06T09:56:34.658Z
-Stopped at: Phase 2 context gathered
-Resume file: .planning/phases/02-public-site/02-CONTEXT.md
+Last session: 2026-03-06T10:18:13.560Z
+Stopped at: Completed 02-01-PLAN.md
+Resume file: None
