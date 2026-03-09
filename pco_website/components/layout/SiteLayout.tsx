@@ -2,7 +2,9 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { ChromeButton } from "@/components/ui/ChromeButton";
+import { useAuth } from "@/contexts/AuthContext";
 
 const NAV_LINKS = [
   { label: "RUSH", href: "/rush" },
@@ -39,6 +41,8 @@ function HamburgerIcon({ open }: { open: boolean }) {
 
 export function SiteLayout({ children }: { children: React.ReactNode }) {
   const [menuOpen, setMenuOpen] = useState(false);
+  const { user, logout } = useAuth();
+  const router = useRouter();
 
   return (
     <div className="min-h-screen flex flex-col bg-black">
@@ -68,14 +72,30 @@ export function SiteLayout({ children }: { children: React.ReactNode }) {
             </nav>
 
             {/* Desktop CTAs */}
-            <div className="hidden md:flex items-center gap-3">
-              <ChromeButton href="/join" variant="primary">
-                Join
-              </ChromeButton>
-              <ChromeButton href="/login" variant="secondary">
-                Login
-              </ChromeButton>
-            </div>
+            {user ? (
+              <div className="hidden md:flex items-center gap-3">
+                <Link
+                  href="/dashboard"
+                  className="text-xs tracking-[0.15em] uppercase text-white/70 hover:text-white transition-colors duration-200"
+                >
+                  Dashboard
+                </Link>
+                <ChromeButton
+                  variant="secondary"
+                  onClick={() => {
+                    logout();
+                    router.replace("/");
+                  }}
+                >
+                  Logout
+                </ChromeButton>
+              </div>
+            ) : (
+              <div className="hidden md:flex items-center gap-3">
+                <ChromeButton href="/join" variant="primary">Join</ChromeButton>
+                <ChromeButton href="/login" variant="secondary">Login</ChromeButton>
+              </div>
+            )}
 
             {/* Hamburger — mobile only */}
             <div
@@ -105,12 +125,33 @@ export function SiteLayout({ children }: { children: React.ReactNode }) {
                 </Link>
               ))}
               <div className="flex flex-col gap-3 pt-2 border-t border-white/10">
-                <ChromeButton href="/join" variant="primary" className="w-full justify-center">
-                  Join
-                </ChromeButton>
-                <ChromeButton href="/login" variant="secondary" className="w-full justify-center">
-                  Login
-                </ChromeButton>
+                {user ? (
+                  <>
+                    <Link
+                      href="/dashboard"
+                      onClick={() => setMenuOpen(false)}
+                      className="text-sm tracking-[0.15em] uppercase text-white/70 hover:text-white transition-colors duration-200 py-1"
+                    >
+                      Dashboard
+                    </Link>
+                    <ChromeButton
+                      variant="secondary"
+                      className="w-full justify-center"
+                      onClick={() => {
+                        setMenuOpen(false);
+                        logout();
+                        router.replace("/");
+                      }}
+                    >
+                      Logout
+                    </ChromeButton>
+                  </>
+                ) : (
+                  <>
+                    <ChromeButton href="/join" variant="primary" className="w-full justify-center">Join</ChromeButton>
+                    <ChromeButton href="/login" variant="secondary" className="w-full justify-center">Login</ChromeButton>
+                  </>
+                )}
               </div>
             </nav>
           </div>
