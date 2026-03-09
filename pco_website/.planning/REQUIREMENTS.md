@@ -47,9 +47,9 @@
 - [ ] **AUTH-01**: `/login` page with email and password fields; note displayed that accounts are admin-created (no self-registration link)
 - [ ] **AUTH-02**: Login submits to `POST /v1/auth/login`; on success stores access + refresh tokens in localStorage and redirects to `/dashboard`
 - [ ] **AUTH-03**: Invalid credentials show generic error ("Invalid email or password") with no email enumeration
-- [ ] **AUTH-04**: Logout clears localStorage tokens and redirects to `/login`
-- [ ] **AUTH-05**: Protected routes (`/dashboard`, `/admin/*`) redirect unauthenticated users to `/login`
-- [ ] **AUTH-06**: Admin routes (`/admin/*`) redirect authenticated non-admin users to `/dashboard` with "Access Denied" message
+- [x] **AUTH-04**: Logout clears localStorage tokens and redirects to `/login`
+- [x] **AUTH-05**: Protected routes (`/dashboard`, `/admin/*`) redirect unauthenticated users to `/login`
+- [x] **AUTH-06**: Admin routes (`/admin/*`) redirect authenticated non-admin users to `/dashboard` with "Access Denied" message
 
 ### Member Dashboard
 
@@ -159,9 +159,9 @@ Updated during roadmap creation: 2026-03-05
 | AUTH-01 | Phase 3: Authentication | Pending |
 | AUTH-02 | Phase 3: Authentication | Pending |
 | AUTH-03 | Phase 3: Authentication | Pending |
-| AUTH-04 | Phase 3: Authentication | Pending |
-| AUTH-05 | Phase 3: Authentication | Pending |
-| AUTH-06 | Phase 3: Authentication | Pending |
+| AUTH-04 | Phase 3: Authentication | Complete |
+| AUTH-05 | Phase 3: Authentication | Complete |
+| AUTH-06 | Phase 3: Authentication | Complete |
 | MEMBER-01 | Phase 4: Member Dashboard | Pending |
 | MEMBER-02 | Phase 4: Member Dashboard | Pending |
 | MEMBER-03 | Phase 4: Member Dashboard | Pending |

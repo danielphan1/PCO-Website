@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: completed
-stopped_at: Phase 3 context gathered
-last_updated: "2026-03-06T21:11:46.373Z"
+stopped_at: "Phase 03-02 paused at checkpoint:human-verify (Task 3 — QA)"
+last_updated: "2026-03-09T23:24:19.923Z"
 last_activity: 2026-03-06 — Phase 1 Plan 03 complete; all five design system components built and QA approved
 progress:
   total_phases: 6
-  completed_phases: 2
-  total_plans: 7
-  completed_plans: 7
+  completed_phases: 3
+  total_plans: 9
+  completed_plans: 9
   percent: 17
 ---
 
@@ -54,6 +54,8 @@ Progress: [██░░░░░░░░] 17%
 | Phase 01-foundation P02 | 2 | 3 tasks | 10 files |
 | Phase 01-foundation P03 | ~45 | 3 tasks | 7 files |
 | Phase 02-public-site P01 | 15 | 2 tasks | 6 files |
+| Phase 03-authentication P01 | 2 | 2 tasks | 3 files |
+| Phase 03-authentication P02 | 12 | 2 tasks | 4 files |
 
 ## Accumulated Context
 
@@ -78,6 +80,9 @@ Recent decisions affecting current work:
 - [Phase 02-public-site]: Public layout wraps SiteLayout at route-group level — admin/auth routes stay independent of public chrome
 - [Phase 02-public-site]: History/Philanthropy/Contact nav links use anchor hrefs (/#section) — they are homepage sections, not separate pages
 - [Phase 02-public-site]: app/page.tsx deleted; (public)/page.tsx placeholder owns / route — avoids scaffold conflict
+- [Phase 03-authentication]: loading=false set only in .finally() prevents AuthGuard from seeing user=null during /v1/users/me fetch
+- [Phase 03-authentication]: access-denied signal via ?access_denied=1 query param — survives router.replace; cleaned up by follow-up replace('/dashboard')
+- [Phase 03-authentication]: Logout ChromeButton uses onClick only — no href prop to avoid 404 on /logout route
 
 ### Pending Todos
 
@@ -92,6 +97,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-06T21:11:46.370Z
-Stopped at: Phase 3 context gathered
-Resume file: .planning/phases/03-authentication/03-CONTEXT.md
+Last session: 2026-03-09T23:24:19.887Z
+Stopped at: Phase 03-02 paused at checkpoint:human-verify (Task 3 — QA)
+Resume file: None
