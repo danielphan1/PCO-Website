@@ -9,6 +9,7 @@ import {
 } from "react";
 import type { User, AuthTokens } from "@/types/api";
 import { setTokens, clearTokens, getAccessToken } from "@/lib/auth";
+import { apiFetch } from "@/lib/api";
 
 interface AuthContextValue {
   user: User | null;
@@ -24,17 +25,20 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Hydrate auth state from localStorage on client mount.
-    // We only check that a token exists — full user validation
-    // (fetching /v1/users/me) happens in Phase 4's dashboard page.
     const token = getAccessToken();
     if (!token) {
       setLoading(false);
-    } else {
-      // Token present — keep loading=true until a page-level fetch validates it.
-      // For Phase 1, we set loading=false immediately; Phase 3 will refine this.
-      setLoading(false);
+      return;
     }
+    apiFetch<User>("/v1/users/me")
+      .then((data) => setUser(data))
+      .catch(() => {
+        // 401 with exhausted refresh, or network error — clear stale tokens
+        clearTokens();
+        document.cookie = "auth-hint=; path=/; max-age=0; samesite=lax";
+        setUser(null);
+      })
+      .finally(() => setLoading(false));
   }, []);
 
   const login = (tokens: AuthTokens, user: User) => {

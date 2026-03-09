@@ -3,6 +3,7 @@
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { useAuth } from "@/contexts/AuthContext";
+import { FullPageSpinner } from "@/components/ui/FullPageSpinner";
 
 interface AuthGuardProps {
   children: React.ReactNode;
@@ -23,12 +24,12 @@ export function AuthGuard({ children, requiredRole }: AuthGuardProps) {
 
     // Non-admin user attempting to access admin routes → redirect to dashboard
     if (requiredRole === "admin" && user.role !== "admin") {
-      router.replace("/dashboard");
+      router.replace("/dashboard?access_denied=1");
     }
   }, [user, loading, requiredRole, router]);
 
-  // While loading, render nothing — prevents flash of protected content
-  if (loading) return null;
+  // While loading, show spinner — prevents flash of protected content
+  if (loading) return <FullPageSpinner />;
 
   // Not authenticated — render nothing while redirect fires
   if (!user) return null;
