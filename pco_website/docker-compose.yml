@@ -1,0 +1,9 @@
+services:
+  web:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      # Set to the reachable address of your backend from inside the container.
+      # Use host.docker.internal:8000 on Mac/Windows if the backend runs on the host.
+      BACKEND_URL: ${BACKEND_URL:-http://host.docker.internal:8000}
