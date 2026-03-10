@@ -99,6 +99,21 @@ export function SiteLayout({ children }: { children: React.ReactNode }) {
               </div>
             )}
 
+            {/* Authenticated mobile controls */}
+            {user && (
+              <div className="flex md:hidden items-center gap-2">
+                <ChromeButton
+                  variant="secondary"
+                  onClick={() => {
+                    logout();
+                    router.replace("/");
+                  }}
+                >
+                  Logout
+                </ChromeButton>
+              </div>
+            )}
+
             {/* Hamburger — mobile only, hidden when logged in */}
             {!user && (
               <div

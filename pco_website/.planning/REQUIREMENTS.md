@@ -44,10 +44,10 @@
 
 ### Authentication
 
-- [ ] **AUTH-01**: `/login` page with email and password fields; note displayed that accounts are admin-created (no self-registration link)
-- [ ] **AUTH-02**: Login submits to `POST /v1/auth/login`; on success stores access + refresh tokens in localStorage and redirects to `/dashboard`
-- [ ] **AUTH-03**: Invalid credentials show generic error ("Invalid email or password") with no email enumeration
-- [x] **AUTH-04**: Logout clears localStorage tokens and redirects to `/login`
+- [x] **AUTH-01**: `/login` page with email and password fields; note displayed that accounts are admin-created (no self-registration link)
+- [x] **AUTH-02**: Login submits to `POST /v1/auth/login`; on success stores access + refresh tokens in localStorage and redirects to `/dashboard`
+- [x] **AUTH-03**: Invalid credentials show generic error ("Invalid email or password") with no email enumeration
+- [x] **AUTH-04**: Logout clears localStorage tokens and redirects to `/` (homepage)
 - [x] **AUTH-05**: Protected routes (`/dashboard`, `/admin/*`) redirect unauthenticated users to `/login`
 - [x] **AUTH-06**: Admin routes (`/admin/*`) redirect authenticated non-admin users to `/dashboard` with "Access Denied" message
 
