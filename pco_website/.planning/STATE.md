@@ -3,8 +3,8 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: completed
-stopped_at: "Phase 03-02 paused at checkpoint:human-verify (Task 3 — QA)"
-last_updated: "2026-03-09T23:24:19.923Z"
+stopped_at: Completed 03-02-PLAN.md
+last_updated: "2026-03-10T00:13:57.668Z"
 last_activity: 2026-03-06 — Phase 1 Plan 03 complete; all five design system components built and QA approved
 progress:
   total_phases: 6
@@ -56,6 +56,7 @@ Progress: [██░░░░░░░░] 17%
 | Phase 02-public-site P01 | 15 | 2 tasks | 6 files |
 | Phase 03-authentication P01 | 2 | 2 tasks | 3 files |
 | Phase 03-authentication P02 | 12 | 2 tasks | 4 files |
+| Phase 03-authentication P02 | 30 | 3 tasks | 7 files |
 
 ## Accumulated Context
 
@@ -83,6 +84,7 @@ Recent decisions affecting current work:
 - [Phase 03-authentication]: loading=false set only in .finally() prevents AuthGuard from seeing user=null during /v1/users/me fetch
 - [Phase 03-authentication]: access-denied signal via ?access_denied=1 query param — survives router.replace; cleaned up by follow-up replace('/dashboard')
 - [Phase 03-authentication]: Logout ChromeButton uses onClick only — no href prop to avoid 404 on /logout route
+- [Phase 03-authentication]: SiteLayout hides nav links and hamburger when user is authenticated — prevents duplicate chrome inside member/admin layouts
 
 ### Pending Todos
 
@@ -97,6 +99,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-09T23:24:19.887Z
-Stopped at: Phase 03-02 paused at checkpoint:human-verify (Task 3 — QA)
+Last session: 2026-03-10T00:13:38.924Z
+Stopped at: Completed 03-02-PLAN.md
 Resume file: None
