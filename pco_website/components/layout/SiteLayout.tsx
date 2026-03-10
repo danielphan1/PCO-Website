@@ -102,6 +102,12 @@ export function SiteLayout({ children }: { children: React.ReactNode }) {
             {/* Authenticated mobile controls */}
             {user && (
               <div className="flex md:hidden items-center gap-2">
+                <Link
+                  href="/dashboard"
+                  className="text-xs tracking-[0.15em] uppercase text-white/70 hover:text-white transition-colors duration-200"
+                >
+                  Dashboard
+                </Link>
                 <ChromeButton
                   variant="secondary"
                   onClick={() => {
