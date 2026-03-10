@@ -1,0 +1,10 @@
+node_modules
+.next
+.env.local
+.env*.local
+*.md
+.git
+.gitignore
+tests
+.playwright-mcp
+test-results
