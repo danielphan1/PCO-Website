@@ -81,10 +81,10 @@ Plans:
   2. The event PDF list shows each event with working "View" (opens signed URL in new tab) and "Download" buttons
   3. When no events are posted, the dashboard shows an empty state message instead of a blank list
   4. The T6 leadership section shows each officer's name, role, and a clickable mailto email link
-**Plans**: TBD
+**Plans**: 1 plan
 
 Plans:
-- [ ] 04-01: Dashboard page — profile snippet from /v1/users/me, event PDF list from /v1/events, empty state, leadership contacts section
+- [ ] 04-01-PLAN.md — Types contract + ChromeButton target prop + full /dashboard implementation (profile, events, leadership)
 
 ### Phase 5: Admin CMS
 **Goal**: Officers can manage event PDFs, member accounts, rush info, and site content without developer involvement
