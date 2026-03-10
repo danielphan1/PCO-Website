@@ -23,7 +23,7 @@ def list_events(db: Session) -> list[dict]:
                 "id": str(event.id),
                 "title": event.title,
                 "date": str(event.date),
-                "url": url,
+                "signed_url": url,
             }
         )
     return result

@@ -45,7 +45,7 @@ export default function DashboardPage() {
 
   // Fetch events
   useEffect(() => {
-    apiFetch<Event[]>("/v1/events")
+    apiFetch<Event[]>("/v1/events/")
       .then(setEvents)
       .catch(() => {
         setEventsError(true);
@@ -69,7 +69,7 @@ export default function DashboardPage() {
     <main className="max-w-2xl mx-auto px-4 py-12">
       {/* Profile snippet */}
       <div className="pb-8">
-        <SectionTitle as="h1">{user?.name?.toUpperCase()}</SectionTitle>
+        <SectionTitle as="h1">{user?.full_name?.toUpperCase()}</SectionTitle>
         <p className="font-body text-white/40 text-xs tracking-[0.2em] uppercase mt-2">
           {user?.role}
         </p>
@@ -134,6 +134,10 @@ export default function DashboardPage() {
       ) : leadersError ? (
         <p className="font-body text-white/40 text-sm py-4">
           Could not load leadership contacts. Please refresh the page.
+        </p>
+      ) : leaders.length === 0 ? (
+        <p className="font-body text-white/40 text-sm py-4">
+          No leadership contacts posted yet.
         </p>
       ) : (
         leaders.map((leader) => (

@@ -13,5 +13,7 @@ class ContentResponse(BaseModel):
 
 
 class LeadershipEntry(BaseModel):
-    full_name: str
+    id: str
+    name: str
     role: str
+    email: str

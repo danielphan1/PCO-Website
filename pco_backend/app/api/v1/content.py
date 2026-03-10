@@ -23,7 +23,7 @@ def get_leadership(db: Annotated[Session, Depends(get_db)]):
         .filter(User.role.in_(OFFICER_ROLES), User.is_active == True)  # noqa: E712
         .all()
     )
-    return [LeadershipEntry(full_name=u.full_name, role=u.role) for u in officers]
+    return [LeadershipEntry(id=str(u.id), name=u.full_name, role=u.role, email=u.email) for u in officers]
 
 
 @router.get("/{section}", response_model=ContentResponse)
