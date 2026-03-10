@@ -37,7 +37,7 @@ async function fetchContent<T>(path: string): Promise<T | null> {
 }
 
 function getInitials(name: string): string {
-  return name
+  return (name ?? "")
     .split(" ")
     .map((word) => word[0])
     .filter(Boolean)
@@ -129,8 +129,8 @@ export default async function HomePage() {
         <SectionTitle>Leadership</SectionTitle>
         {leadership && leadership.length > 0 ? (
           <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {leadership.map((member) => (
-              <ChromeCard key={member.id}>
+            {leadership.map((member, i) => (
+              <ChromeCard key={member.id ?? i}>
                 <div className="flex flex-col items-center gap-3 text-center p-4">
                   {member.photo_url ? (
                     <img

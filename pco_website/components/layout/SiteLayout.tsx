@@ -58,18 +58,20 @@ export function SiteLayout({ children }: { children: React.ReactNode }) {
               PSI CHI OMEGA
             </Link>
 
-            {/* Desktop nav */}
-            <nav className="hidden md:flex items-center gap-8" aria-label="Main navigation">
-              {NAV_LINKS.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className="text-xs tracking-[0.15em] uppercase text-white/70 hover:text-white transition-colors duration-200"
-                >
-                  {link.label}
-                </Link>
-              ))}
-            </nav>
+            {/* Desktop nav — hidden when logged in */}
+            {!user && (
+              <nav className="hidden md:flex items-center gap-8" aria-label="Main navigation">
+                {NAV_LINKS.map((link) => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className="text-xs tracking-[0.15em] uppercase text-white/70 hover:text-white transition-colors duration-200"
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+              </nav>
+            )}
 
             {/* Desktop CTAs */}
             {user ? (
@@ -97,18 +99,20 @@ export function SiteLayout({ children }: { children: React.ReactNode }) {
               </div>
             )}
 
-            {/* Hamburger — mobile only */}
-            <div
-              className="md:hidden"
-              onClick={() => setMenuOpen((prev) => !prev)}
-            >
-              <HamburgerIcon open={menuOpen} />
-            </div>
+            {/* Hamburger — mobile only, hidden when logged in */}
+            {!user && (
+              <div
+                className="md:hidden"
+                onClick={() => setMenuOpen((prev) => !prev)}
+              >
+                <HamburgerIcon open={menuOpen} />
+              </div>
+            )}
           </div>
         </div>
 
-        {/* Mobile dropdown — full-width panel below header, no slide-in drawer */}
-        {menuOpen && (
+        {/* Mobile dropdown — hidden when logged in */}
+        {menuOpen && !user && (
           <div className="md:hidden border-t border-white/10 bg-black">
             <nav
               className="flex flex-col px-4 py-4 gap-4"
@@ -125,33 +129,8 @@ export function SiteLayout({ children }: { children: React.ReactNode }) {
                 </Link>
               ))}
               <div className="flex flex-col gap-3 pt-2 border-t border-white/10">
-                {user ? (
-                  <>
-                    <Link
-                      href="/dashboard"
-                      onClick={() => setMenuOpen(false)}
-                      className="text-sm tracking-[0.15em] uppercase text-white/70 hover:text-white transition-colors duration-200 py-1"
-                    >
-                      Dashboard
-                    </Link>
-                    <ChromeButton
-                      variant="secondary"
-                      className="w-full justify-center"
-                      onClick={() => {
-                        setMenuOpen(false);
-                        logout();
-                        router.replace("/");
-                      }}
-                    >
-                      Logout
-                    </ChromeButton>
-                  </>
-                ) : (
-                  <>
-                    <ChromeButton href="/join" variant="primary" className="w-full justify-center">Join</ChromeButton>
-                    <ChromeButton href="/login" variant="secondary" className="w-full justify-center">Login</ChromeButton>
-                  </>
-                )}
+                <ChromeButton href="/join" variant="primary" className="w-full justify-center">Join</ChromeButton>
+                <ChromeButton href="/login" variant="secondary" className="w-full justify-center">Login</ChromeButton>
               </div>
             </nav>
           </div>
