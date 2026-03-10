@@ -6,6 +6,8 @@ interface ChromeButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement
   variant?: "primary" | "secondary";
   asChild?: boolean;
   href?: string;
+  target?: string;
+  rel?: string;
 }
 
 export function ChromeButton({
@@ -13,6 +15,8 @@ export function ChromeButton({
   children,
   className,
   href,
+  target,
+  rel,
   ...props
 }: ChromeButtonProps) {
   const base = cn(
@@ -53,7 +57,7 @@ export function ChromeButton({
 
   if (href) {
     return (
-      <a href={href} className={base}>
+      <a href={href} className={base} target={target} rel={rel}>
         {inner}
       </a>
     );

@@ -51,3 +51,20 @@ export interface ContactInfo {
   phone?: string;
   address?: string;
 }
+
+// Phase 4 — Member Dashboard type contracts
+
+export interface Event {
+  id: string;
+  title: string;
+  date: string;           // ISO date string — format with Date constructor
+  signed_url: string;     // Supabase signed URL for PDF access
+}
+
+// LeadershipContact is separate from LeadershipMember (public type has no email field)
+export interface LeadershipContact {
+  id: string;
+  name: string;
+  role: string;
+  email: string;          // Required for mailto links
+}
