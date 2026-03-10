@@ -1,8 +1,5 @@
-import { describe, it, expect, beforeEach, afterEach, vi } from "vitest";
+import { describe, it, expect, beforeEach, vi } from "vitest";
 import { apiFetch } from "@/lib/api";
-
-// Stub NEXT_PUBLIC_API_BASE
-vi.stubEnv("NEXT_PUBLIC_API_BASE", "http://localhost:8000");
 
 beforeEach(() => {
   localStorage.clear();
@@ -21,7 +18,7 @@ describe("apiFetch — happy path", () => {
 
     expect(fetchSpy).toHaveBeenCalledOnce();
     const [url, init] = fetchSpy.mock.calls[0] as [string, RequestInit];
-    expect(url).toBe("http://localhost:8000/v1/users/me");
+    expect(url).toBe("/api/proxy/v1/users/me");
     expect((init.headers as Headers).get("Authorization")).toBe("Bearer tok123");
   });
 
@@ -76,17 +73,11 @@ describe("apiFetch — error handling", () => {
     localStorage.setItem("refresh_token", "bad_refresh");
 
     vi.spyOn(globalThis, "fetch")
-      // First call: original request returns 401
       .mockResolvedValueOnce(
-        new Response(JSON.stringify({ detail: "Unauthorized" }), {
-          status: 401,
-        })
+        new Response(JSON.stringify({ detail: "Unauthorized" }), { status: 401 })
       )
-      // Second call: refresh attempt returns 401
       .mockResolvedValueOnce(
-        new Response(JSON.stringify({ detail: "Invalid refresh" }), {
-          status: 401,
-        })
+        new Response(JSON.stringify({ detail: "Invalid refresh" }), { status: 401 })
       );
 
     await expect(apiFetch("/v1/users/me")).rejects.toMatchObject({
@@ -103,23 +94,15 @@ describe("apiFetch — error handling", () => {
     localStorage.setItem("refresh_token", "valid_refresh");
 
     vi.spyOn(globalThis, "fetch")
-      // First call: original request 401
       .mockResolvedValueOnce(
-        new Response(JSON.stringify({ detail: "Unauthorized" }), {
-          status: 401,
-        })
+        new Response(JSON.stringify({ detail: "Unauthorized" }), { status: 401 })
       )
-      // Second call: refresh succeeds
       .mockResolvedValueOnce(
         new Response(
-          JSON.stringify({
-            access_token: "new_tok",
-            refresh_token: "new_refresh",
-          }),
+          JSON.stringify({ access_token: "new_tok", refresh_token: "new_refresh" }),
           { status: 200 }
         )
       )
-      // Third call: retry with new token succeeds
       .mockResolvedValueOnce(
         new Response(JSON.stringify({ id: "u1" }), { status: 200 })
       );

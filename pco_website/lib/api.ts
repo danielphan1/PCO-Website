@@ -1,6 +1,8 @@
 import { getAccessToken, getRefreshToken, setTokens, clearTokens } from "@/lib/auth";
 import type { AuthTokens } from "@/types/api";
 
+const PROXY_BASE = "/api/proxy";
+
 // Singleton refresh promise — prevents concurrent 401s from triggering multiple refresh calls.
 // If two requests both get 401, the second one awaits the same promise as the first.
 let refreshPromise: Promise<string | null> | null = null;
@@ -10,14 +12,11 @@ async function refreshTokens(): Promise<string | null> {
   if (!refresh) return null;
 
   try {
-    const res = await fetch(
-      `${process.env.NEXT_PUBLIC_API_BASE}/v1/auth/refresh`,
-      {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ refresh_token: refresh }),
-      }
-    );
+    const res = await fetch(`${PROXY_BASE}/v1/auth/refresh`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ refresh_token: refresh }),
+    });
 
     if (!res.ok) {
       clearTokens();
@@ -37,7 +36,6 @@ export async function apiFetch<T>(
   path: string,
   options: RequestInit = {}
 ): Promise<T> {
-  const base = process.env.NEXT_PUBLIC_API_BASE;
   const token = getAccessToken();
 
   const headers = new Headers(options.headers);
@@ -47,7 +45,7 @@ export async function apiFetch<T>(
     headers.set("Content-Type", "application/json");
   }
 
-  let res = await fetch(`${base}${path}`, { ...options, headers });
+  let res = await fetch(`${PROXY_BASE}${path}`, { ...options, headers });
 
   if (res.status === 401) {
     // Singleton: if refresh already in flight, all concurrent 401s await the same promise
@@ -63,7 +61,7 @@ export async function apiFetch<T>(
     }
 
     headers.set("Authorization", `Bearer ${newToken}`);
-    res = await fetch(`${base}${path}`, { ...options, headers });
+    res = await fetch(`${PROXY_BASE}${path}`, { ...options, headers });
   }
 
   if (!res.ok) {
