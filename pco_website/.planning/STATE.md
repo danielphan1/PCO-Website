@@ -2,16 +2,16 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-status: completed
-stopped_at: "Checkpoint: 04-01 tasks complete, awaiting human-verify of /dashboard"
-last_updated: "2026-03-10T03:00:33.598Z"
-last_activity: 2026-03-06 — Phase 1 Plan 03 complete; all five design system components built and QA approved
+status: active
+stopped_at: "Completed 04-01-PLAN.md — Phase 4 Member Dashboard fully complete; ready for Phase 5"
+last_updated: "2026-03-10T03:10:00.000Z"
+last_activity: 2026-03-10 — Phase 4 Plan 01 complete; /dashboard QA approved, all 5 backend+frontend fixes committed
 progress:
   total_phases: 6
-  completed_phases: 4
+  completed_phases: 3
   total_plans: 10
-  completed_plans: 10
-  percent: 17
+  completed_plans: 7
+  percent: 50
 ---
 
 # Project State
@@ -21,16 +21,16 @@ progress:
 See: .planning/PROJECT.md (updated 2026-03-05)
 
 **Core value:** Active members can access their event schedule and leadership contacts, while admins can manage membership, rush info, and content — all without involving a developer.
-**Current focus:** Phase 1 — Foundation
+**Current focus:** Phase 5 — Admin CMS
 
 ## Current Position
 
-Phase: 1 of 6 (Foundation)
-Plan: 3 of 3 in current phase (Phase 1 COMPLETE)
-Status: Phase 1 complete — ready for Phase 2
-Last activity: 2026-03-06 — Phase 1 Plan 03 complete; all five design system components built and QA approved
+Phase: 4 of 6 (Member Dashboard — COMPLETE)
+Plan: 1 of 1 in current phase (Phase 4 COMPLETE)
+Status: Phase 4 complete — ready for Phase 5 (Admin CMS)
+Last activity: 2026-03-10 — Phase 4 Plan 01 complete; /dashboard QA approved, all 5 backend+frontend fixes committed
 
-Progress: [██░░░░░░░░] 17%
+Progress: [█████░░░░░] 50%
 
 ## Performance Metrics
 
@@ -57,7 +57,7 @@ Progress: [██░░░░░░░░] 17%
 | Phase 03-authentication P01 | 2 | 2 tasks | 3 files |
 | Phase 03-authentication P02 | 12 | 2 tasks | 4 files |
 | Phase 03-authentication P02 | 30 | 3 tasks | 7 files |
-| Phase 04-member-dashboard P01 | 1 | 2 tasks | 3 files |
+| Phase 04-member-dashboard P01 | ~2 | 3 tasks | 6 files |
 
 ## Accumulated Context
 
@@ -87,8 +87,10 @@ Recent decisions affecting current work:
 - [Phase 03-authentication]: Logout ChromeButton uses onClick only — no href prop to avoid 404 on /logout route
 - [Phase 03-authentication]: SiteLayout hides nav links and hamburger when user is authenticated — prevents duplicate chrome inside member/admin layouts
 - [Phase 04-member-dashboard]: No separate SkeletonRow file — declared inline above page function since it is scoped to dashboard only
-- [Phase 04-member-dashboard]: Leadership empty state not rendered — empty leaders array treated as success per plan spec
+- [Phase 04-member-dashboard]: Leadership empty state added during QA — plan said not required but QA revealed it is needed for correct UX
 - [Phase 04-member-dashboard]: No fetching /v1/users/me — profile data sourced exclusively from useAuth() per plan spec
+- [Phase 04-member-dashboard]: User field is full_name not name — actual backend User model uses full_name; corrected during QA
+- [Phase 04-member-dashboard]: Backend LeadershipEntry schema aligned to include id, name, email — required for frontend LeadershipContact type
 
 ### Pending Todos
 
@@ -103,6 +105,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-10T03:00:33.595Z
-Stopped at: Checkpoint: 04-01 tasks complete, awaiting human-verify of /dashboard
+Last session: 2026-03-10T03:10:00.000Z
+Stopped at: Completed 04-01-PLAN.md — Phase 4 Member Dashboard fully complete; ready for Phase 5
 Resume file: None

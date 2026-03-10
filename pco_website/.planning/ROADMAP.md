@@ -84,7 +84,7 @@ Plans:
 **Plans**: 1 plan
 
 Plans:
-- [ ] 04-01-PLAN.md — Types contract + ChromeButton target prop + full /dashboard implementation (profile, events, leadership)
+- [x] 04-01-PLAN.md — Types contract + ChromeButton target prop + full /dashboard implementation (profile, events, leadership)
 
 ### Phase 5: Admin CMS
 **Goal**: Officers can manage event PDFs, member accounts, rush info, and site content without developer involvement
