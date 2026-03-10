@@ -53,10 +53,10 @@
 
 ### Member Dashboard
 
-- [ ] **MEMBER-01**: `/dashboard` displays profile snippet from `GET /v1/users/me` (name, role)
-- [ ] **MEMBER-02**: `/dashboard` event PDFs list from `GET /v1/events` with "View" (open signed URL) and "Download" buttons per event
-- [ ] **MEMBER-03**: `/dashboard` shows empty state ("No upcoming events posted yet") when event list is empty
-- [ ] **MEMBER-04**: `/dashboard` T6 leadership contacts section showing name, role, and email (mailto links)
+- [x] **MEMBER-01**: `/dashboard` displays profile snippet from `GET /v1/users/me` (name, role)
+- [x] **MEMBER-02**: `/dashboard` event PDFs list from `GET /v1/events` with "View" (open signed URL) and "Download" buttons per event
+- [x] **MEMBER-03**: `/dashboard` shows empty state ("No upcoming events posted yet") when event list is empty
+- [x] **MEMBER-04**: `/dashboard` T6 leadership contacts section showing name, role, and email (mailto links)
 
 ### Admin CMS
 
@@ -162,10 +162,10 @@ Updated during roadmap creation: 2026-03-05
 | AUTH-04 | Phase 3: Authentication | Complete |
 | AUTH-05 | Phase 3: Authentication | Complete |
 | AUTH-06 | Phase 3: Authentication | Complete |
-| MEMBER-01 | Phase 4: Member Dashboard | Pending |
-| MEMBER-02 | Phase 4: Member Dashboard | Pending |
-| MEMBER-03 | Phase 4: Member Dashboard | Pending |
-| MEMBER-04 | Phase 4: Member Dashboard | Pending |
+| MEMBER-01 | Phase 4: Member Dashboard | Complete |
+| MEMBER-02 | Phase 4: Member Dashboard | Complete |
+| MEMBER-03 | Phase 4: Member Dashboard | Complete |
+| MEMBER-04 | Phase 4: Member Dashboard | Complete |
 | ADMIN-01 | Phase 5: Admin CMS | Pending |
 | ADMIN-02 | Phase 5: Admin CMS | Pending |
 | ADMIN-03 | Phase 5: Admin CMS | Pending |

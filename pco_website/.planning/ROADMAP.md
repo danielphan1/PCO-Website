@@ -15,7 +15,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 - [x] **Phase 1: Foundation** - API client, auth infrastructure, design system tokens and components (completed 2026-03-06)
 - [ ] **Phase 2: Public Site** - All public marketing pages (/, /rush, /join, /history, /philanthropy, /contact) as Server Components
 - [x] **Phase 3: Authentication** - Login page, JWT token lifecycle, route protection, AuthGuard (completed 2026-03-09)
-- [ ] **Phase 4: Member Dashboard** - Protected /dashboard with profile, event PDFs, and leadership contacts
+- [x] **Phase 4: Member Dashboard** - Protected /dashboard with profile, event PDFs, and leadership contacts (completed 2026-03-10)
 - [ ] **Phase 5: Admin CMS** - Full officer self-service: events, members, rush editor, content editor
 - [ ] **Phase 6: Quality + Polish** - Accessibility, SEO, env setup, README, mobile audit
 
@@ -129,6 +129,6 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6
 | 1. Foundation | 3/3 | Complete   | 2026-03-06 |
 | 2. Public Site | 0/4 | Not started | - |
 | 3. Authentication | 2/2 | Complete   | 2026-03-10 |
-| 4. Member Dashboard | 0/1 | Not started | - |
+| 4. Member Dashboard | 1/1 | Complete   | 2026-03-10 |
 | 5. Admin CMS | 0/3 | Not started | - |
 | 6. Quality + Polish | 0/3 | Not started | - |
