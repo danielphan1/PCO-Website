@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 async function getPhilanthropy(): Promise<ContentSection | null> {
   try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE}/v1/content/philanthropy`, {
+    const res = await fetch(`${process.env.BACKEND_URL}/v1/content/philanthropy`, {
       next: { revalidate: 3600 },
     });
     if (!res.ok) return null;

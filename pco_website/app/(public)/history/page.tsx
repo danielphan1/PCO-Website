@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 async function getHistory(): Promise<ContentSection | null> {
   try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE}/v1/content/history`, {
+    const res = await fetch(`${process.env.BACKEND_URL}/v1/content/history`, {
       next: { revalidate: 3600 },
     });
     if (!res.ok) return null;

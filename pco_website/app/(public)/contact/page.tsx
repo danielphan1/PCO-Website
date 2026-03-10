@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 async function getContacts(): Promise<ContactInfo | null> {
   try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE}/v1/content/contacts`, {
+    const res = await fetch(`${process.env.BACKEND_URL}/v1/content/contacts`, {
       next: { revalidate: 3600 },
     });
     if (!res.ok) return null;
@@ -22,7 +22,7 @@ async function getContacts(): Promise<ContactInfo | null> {
 
 async function getLeadership(): Promise<LeadershipMember[] | null> {
   try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE}/v1/content/leadership`, {
+    const res = await fetch(`${process.env.BACKEND_URL}/v1/content/leadership`, {
       next: { revalidate: 3600 },
     });
     if (!res.ok) return null;

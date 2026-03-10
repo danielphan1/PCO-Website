@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 
 async function fetchContent<T>(path: string): Promise<T | null> {
   try {
-    const apiBase = process.env.NEXT_PUBLIC_API_BASE;
+    const apiBase = process.env.BACKEND_URL;
     if (!apiBase) return null;
     const controller = new AbortController();
     const timeout = setTimeout(() => controller.abort(), 5000);
