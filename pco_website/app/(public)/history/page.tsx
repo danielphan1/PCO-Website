@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { SectionTitle } from "@/components/ui/SectionTitle";
 import type { ContentSection } from "@/types/api";
 
+export const dynamic = "force-dynamic";
+
 export const metadata: Metadata = {
   title: "History | Psi Chi Omega",
   description: "The history of Psi Chi Omega Alpha Chapter.",

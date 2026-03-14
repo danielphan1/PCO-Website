@@ -75,7 +75,7 @@ def test_list_events_member(auth_client, db_session):
     assert item is not None
     assert item["title"] == "Test Event"
     assert "date" in item
-    assert item["url"] == "https://signed.url/file.pdf"
+    assert item["signed_url"] == "https://signed.url/file.pdf"
 
 
 def test_list_events_url_failure_graceful(auth_client, db_session):
@@ -96,7 +96,7 @@ def test_list_events_url_failure_graceful(auth_client, db_session):
     events = resp.json()
     item = next((e for e in events if e["id"] == str(event.id)), None)
     assert item is not None
-    assert item["url"] is None
+    assert item["signed_url"] is None
 
 
 # ---------------------------------------------------------------------------

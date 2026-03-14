@@ -33,6 +33,9 @@ indent-style = "space"
 [tool.pytest.ini_options]
 testpaths = ["app/tests"]
 
+[tool.uv.scripts]
+test = "pytest app/tests/"
+
 [dependency-groups]
 dev = [
     "httpx>=0.28.1",

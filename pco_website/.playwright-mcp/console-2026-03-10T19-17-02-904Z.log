@@ -1,0 +1,2 @@
+[     228ms] [ERROR] Failed to load resource: the server responded with a status of 401 (Unauthorized) @ http://localhost:8000/v1/users/me:0
+[     233ms] [ERROR] Failed to load resource: the server responded with a status of 401 (Unauthorized) @ http://localhost:8000/v1/auth/refresh:0

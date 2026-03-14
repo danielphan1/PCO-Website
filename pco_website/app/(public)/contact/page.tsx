@@ -3,6 +3,8 @@ import { SectionTitle } from "@/components/ui/SectionTitle";
 import { ChromeCard } from "@/components/ui/ChromeCard";
 import type { ContactInfo, LeadershipMember } from "@/types/api";
 
+export const dynamic = "force-dynamic";
+
 export const metadata: Metadata = {
   title: "Contact | Psi Chi Omega",
   description: "Get in touch with Psi Chi Omega Alpha Chapter.",
